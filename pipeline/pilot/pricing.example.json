@@ -1,0 +1,5 @@
+{
+  "_comment": "Copy to pricing.json and fill in USD per million tokens for the model you pass to --verify-model, from Anthropic's current pricing page. Left as null on purpose: the script refuses to spend until you set real numbers.",
+  "input_per_mtok": null,
+  "output_per_mtok": null
+}

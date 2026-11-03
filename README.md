@@ -11,6 +11,7 @@ Early planning. The repo currently holds the product spec and a two-word sample 
 - [`docs/spec.md`](docs/spec.md): features, workflows, data model, architecture, repo layout, risks and roadmap
 - [`data/samples/agape_agapao_lexical_sample.json`](data/samples/agape_agapao_lexical_sample.json): sample entries for G26 and G25, with LXX background, translation variants, morphology and KJV verse layers for John 3:16 and John 21:15–17
 - [`data/samples/agape_agapao_resource_description.md`](data/samples/agape_agapao_resource_description.md): what the sample contains and which sources it draws on
+- [`pipeline/pilot/`](pipeline/pilot/): a pilot for comparing local Ollama models at drafting the compiled fields, with automated checks and token and cost reporting
 
 ## Source lock
 

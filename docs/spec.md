@@ -263,11 +263,13 @@ Each workflow starts at a passage and uses several features in sequence. Feature
 
 ### Maintainer extending the dataset
 
-1. Add a new lemma by running the ingestion script against the Strong's-numbered source texts.
-2. Draft the derived fields (frequency notes, theological notes, contrast summaries) with an LLM, each tagged `derived` and `unreviewed`.
-3. A reviewer checks each draft against the five locked sources and promotes it to reviewed.
-4. CI validates the schema and fails on any source outside the locked list.
-5. Release a new dataset version; the app pins to it.
+1. Add new lemmas by running the ingestion script against the Strong's-numbered source texts. The script copies every sourced field exactly and computes counts.
+2. A local model drafts the compiled fields (etymology notes, contrast summaries, theological notes), each tagged `derived` and `unreviewed`, with the model name and version recorded in `drafted_by`.
+3. Automated checks reject drafts containing numbers or Strong's numbers that are not in the source, and flag Greek, Hebrew or verse references the source does not contain. Rejected drafts go back to the model.
+4. A stronger model audits each passing draft against its source text and lists any statement the source does not support, recorded in `verified_by`.
+5. A reviewer checks the flagged items and a random sample, then promotes drafts to reviewed.
+6. CI validates the schema and fails on any source outside the locked list.
+7. Release a new dataset version; the app pins to it.
 
 ## Architecture and data pipeline
 
@@ -296,7 +298,7 @@ Data flows down the picture. Sources go through ingestion and human review into 
 - **Storage:** SQLite for an offline or single-user build, Postgres with JSONB for a hosted multi-user build. Roughly 8,000 lemmas plus verse tokens fit comfortably in either.
 - **Retrieval:** exact lookup first (Strong's number, verse reference), then semantic similarity over entries. Results return field paths so the app can build citations.
 - **AI layer:** the model receives only retrieved entries, must cite field paths, and is told to say so when the data does not answer the question.
-- **Pipeline:** scripts parse the source texts, an LLM drafts derived fields, a reviewer promotes them, and a release step publishes a new dataset version.
+- **Pipeline:** scripts copy every sourced field exactly and compute counts; a local model drafts only the compiled fields; automated checks reject unsupported drafts; a stronger model audits each draft against its source text; a reviewer promotes drafts; and a release step publishes a new dataset version. See `pipeline/pilot/` for the drafting pilot.
 - **Client:** a responsive web app first, with a mobile wrapper later. The reader, trainer and offline lookups can run on a downloaded copy of the dataset.
 - **Public API:** the same retrieval layer exposes read-only endpoints for researchers and developers.
 
@@ -329,7 +331,7 @@ lexicon-graph/
 4. **Review through pull requests.** Machine-drafted fields arrive as pull requests tagged `unreviewed`. A reviewer checks them against the raw sources, and merging promotes them to `reviewed`. Use `CODEOWNERS` so each book or lemma range has a named reviewer.
 5. **Limit what the drafting model sees.** The draft step receives only the raw text of the five sources for that lemma, not the open web, so derived fields cannot import outside claims.
 6. **Write evals before the AI features.** Keep a golden set of questions with the lemma and field each answer must cite (for example, a John 21 question must retrieve G25 and G5368 and cite `distinctions`). CI fails if retrieval misses or an answer makes an uncited claim.
-7. **Grow in vertical slices.** First all of agapē and agapaō end to end, then 25 high-frequency words, then 1 John (short and dense with these words), then a full gospel, then the canon.
+7. **Grow book by book.** First all of agapē and agapaō end to end, then the epistles, then the gospels, then the rest of the New Testament, then the Old Testament in canonical order (see Rollout order).
 8. **Keep data and app in separate repos or packages.** Researchers can then use the dataset alone, and the app pins a tagged dataset version such as `dataset-v0.3.0`.
 9. **Write a one-page contributing guide.** It covers how to add a lemma, how to draft derived fields, and what a reviewer must check.
 10. **Pick licenses deliberately.** Code and dataset can carry different licenses. The sources are public domain, so the compiled dataset can be open, but record that decision in `SOURCES.md`.
@@ -357,8 +359,8 @@ The build runs in five phases, and each phase opens only after a data-quality ga
 flowchart TD
   P1["<b>Phase 1: Foundation</b><br/>Schema, SOURCES.md and the CI source lock<br/>Agapē and agapaō end to end, from the sample"]
   G1{{"Gate: the schema validates the sample data"}}
-  P2["<b>Phase 2: Dataset growth</b><br/>25 high-frequency words, then 1 John<br/>Derived fields drafted, then reviewed by a person"]
-  G2{{"Gate: 1 John fully reviewed, every field has a source"}}
+  P2["<b>Phase 2: Dataset growth</b><br/>Drafting pilot, then epistles, gospels, rest of NT, then OT<br/>Drafted, checked, audited, then reviewed by a person"]
+  G2{{"Gate: epistles fully reviewed, every field has a source"}}
   P3["<b>Phase 3: Core study app</b><br/>Tap-a-word reader, word study, translation comparator<br/>Contrast explorer showing scholarly status"]
   G3{{"Gate: every displayed field shows its source and status"}}
   P4["<b>Phase 4: AI and discovery</b><br/>Grounded Q&A and cross-reference engine<br/>Concept graph and distribution heatmaps"]
@@ -367,7 +369,19 @@ flowchart TD
   P1 --> G1 --> P2 --> G2 --> P3 --> G3 --> P4 --> G4 --> P5
 ```
 
-Phases 1 and 2 are data work, and Phase 3 is the first point where a user can open the app and study a real word.
+Phases 1 and 2 are data work, and Phase 3 is the first point where a user can open the app and study a real word. The Phase 2 gate covers the epistles, so the app can start on reviewed data while the later books continue.
+
+## Rollout order
+
+Dataset growth goes book by book. A book's work is every lemma that first occurs in it and is not already done, so later books should need fewer new lemmas (to be measured, not assumed).
+
+1. **Drafting pilot** on agapē and agapaō, to choose the local model (see `pipeline/pilot/`).
+2. **Epistles:** Romans through Jude, counting Hebrews as an epistle.
+3. **Gospels:** Matthew, Mark, Luke and John.
+4. **Rest of the New Testament:** Acts and Revelation.
+5. **Old Testament,** in canonical order from Genesis to Malachi. This adds Strong's Hebrew lemmas and Septuagint links, so the Hebrew-side raw source text must be in `data/raw/` first.
+
+Lemma entries do not depend on the verse-level data, but verse-to-word mapping does. The open question about where that mapping comes from has to be settled before verse-level data for step 2 can be built.
 
 ## Open questions
 
