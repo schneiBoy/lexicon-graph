@@ -2,8 +2,9 @@
 """Pilot: draft derived lexicon fields with local Ollama models, check them, and
 report tokens, time and (optional) cost. Standard library only.
 
-Leave-one-out on the sample: each lemma is drafted with the OTHER lemma as the
-few-shot example, then compared with the sample's own derived fields as a control.
+Each lemma is drafted from its own source fields only, with a made-up format example
+(never another lemma's text). Every statement must carry a verbatim quote from the source.
+The sample's own derived fields are checked the same way as a control.
 
 Nothing here calls the Claude API unless you pass --verify with every spend guard
 (see README.md). Without --verify, the script only talks to your local Ollama.
@@ -18,7 +19,7 @@ import urllib.request
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from checks import DRAFT_SCHEMA, check_draft  # noqa: E402
+from checks import DRAFT_SCHEMA, check_draft, check_text  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 DEFAULT_SAMPLE = HERE.parents[1] / "data" / "samples" / "agape_agapao_lexical_sample.json"
@@ -28,12 +29,28 @@ SOURCE_KEYS = ("greek", "transliteration", "strongs", "youngs", "bullinger", "th
 
 SYSTEM = (
     "You write short reference notes for a Biblical Greek lexicon dataset. "
-    "Use ONLY the SOURCE JSON you are given. Do not add facts, Greek or Hebrew words, "
-    "Strong's numbers, verse references or numbers that are not in the SOURCE. "
-    "If the SOURCE does not support a statement, leave it out. "
-    "Write plain, neutral English and do not argue for any doctrine. "
-    "Return JSON only, matching the schema."
+    "Use ONLY the SOURCE JSON you are given. Do not use general knowledge. "
+    "Every statement must be a close paraphrase of one passage in the SOURCE, and must carry a "
+    '"quote": that passage copied exactly, character for character, from ONE field of the SOURCE. '
+    "Do not add facts, Greek or Hebrew words, Strong's numbers, verse references or numbers that are "
+    "not in the SOURCE. Do not state interpretations, doctrines or distinctions the SOURCE does not state. "
+    "If the SOURCE does not support something, leave it out; an empty list is correct for a field "
+    "the SOURCE says nothing about. Plain, neutral English. Return JSON only, matching the schema. "
+    "The example below is a made-up format demonstration; never reuse its wording."
 )
+
+EXAMPLE_SOURCE = {
+    "strongs": {"number": "G0000", "definition": "EXAMPLE ONLY: a placeholder entry that shows the output format"},
+    "thayers": {"definition": "EXAMPLE ONLY: this word is rare outside the corpus. Often paired with the placeholder word."},
+}
+EXAMPLE_DRAFT = {
+    "etymology_note": [],
+    "distinctions": [{"text": "The word is rare outside the corpus.",
+                      "quote": "this word is rare outside the corpus"}],
+    "semantic_contrasts": [],
+    "key_theological_notes": [{"text": "It is often paired with the placeholder word.",
+                               "quote": "Often paired with the placeholder word."}],
+}
 
 VERIFY_SYSTEM = (
     "You audit a DRAFT against its SOURCE. List every statement in the DRAFT that the SOURCE "
@@ -62,13 +79,13 @@ def load_lemmas(path):
     return lemmas
 
 
-def build_messages(example, source):
+def build_messages(source):
     def dump(obj, indent=None):
         return json.dumps(obj, ensure_ascii=False, indent=indent)
     return [
         {"role": "system", "content": SYSTEM},
-        {"role": "user", "content": "SOURCE:\n" + dump(example["source"], 1)},
-        {"role": "assistant", "content": dump(example["gold"])},
+        {"role": "user", "content": "SOURCE:\n" + dump(EXAMPLE_SOURCE, 1)},
+        {"role": "assistant", "content": dump(EXAMPLE_DRAFT)},
         {"role": "user", "content": "SOURCE:\n" + dump(source, 1)},
     ]
 
@@ -103,8 +120,8 @@ def ollama_chat(host, model, messages, num_ctx):
     return r["message"]["content"], metrics
 
 
-def draft_lemma(host, model, example, target, num_ctx, retries):
-    messages = build_messages(example, target["source"])
+def draft_lemma(host, model, target, num_ctx, retries):
+    messages = build_messages(target["source"])
     totals = dict.fromkeys(TOTAL_KEYS, 0)
     first = None
     for attempt in range(retries + 1):
@@ -196,7 +213,7 @@ def verify_problems(args):
 
 def write_report(out, rows, control, projection_n):
     lines = ["# Pilot report", "",
-             "| Model | Lemmas | First-pass OK | Final OK | Flags/lemma | Output tokens | Prompt tokens | Seconds | Out tok/s |",
+             "| Model | Lemmas | First-pass OK | Final OK | Padding flags/lemma | Output tokens | Prompt tokens | Seconds | Out tok/s |",
              "| --- | --- | --- | --- | --- | --- | --- | --- | --- |"]
     for model, rs in rows.items():
         n = len(rs)
@@ -207,10 +224,11 @@ def write_report(out, rows, control, projection_n):
             f"{sum(len(r['final']['flags']) for r in rs) / n:.1f} | "
             f"{sum(r['output_tokens'] for r in rs)} | {sum(r['prompt_tokens'] for r in rs)} | "
             f"{sum(r['seconds'] for r in rs):.0f} | {sum(r['output_tokens'] for r in rs) / gen:.1f} |")
-    lines += ["", f"Control (the sample's own fields): {control['fails']} hard fails, "
-              f"{control['flags']} flags across {control['n']} lemmas. Flags in the control are "
-              "the noise floor: they come from the sample using words and references that its source "
-              "fields do not contain.", "", f"## Projection to {projection_n} lemmas (local drafting)", ""]
+    lines += ["", f"Control (the sample's own fields, text checks only): {control['problems']} items "
+              f"across {control['n']} lemmas are not in the five sources. This is how much of the "
+              "sample goes beyond its sources; the models should score at or near 0.", "",
+              "Fails are retried; flags list statement words found nowhere in the source (padding).", "",
+              f"## Projection to {projection_n} lemmas (local drafting)", ""]
     for model, rs in rows.items():
         per = sum(r["seconds"] for r in rs) / len(rs)
         lines.append(f"- {model}: about {per * projection_n / 3600:.1f} hours "
@@ -258,8 +276,7 @@ def main():
 
     if args.dry_run:
         for name in names:
-            other = lemmas[next(n for n in names if n != name)]
-            chars = sum(len(m["content"]) for m in build_messages(other, lemmas[name]["source"]))
+            chars = sum(len(m["content"]) for m in build_messages(lemmas[name]["source"]))
             print(f"{name}: prompt is {chars} characters, about {int(chars / 2.5)} tokens (rough upper estimate)")
         print("Dry run: nothing was called.")
         return
@@ -272,19 +289,19 @@ def main():
         print(f"Claude verification enabled with a hard cap of ${args.max_usd:.2f}. "
               f"Every call is logged to {out / 'cost_ledger.jsonl'}.")
 
-    control = {"n": len(names), "fails": 0, "flags": 0}
+    control = {"n": len(names), "problems": 0}
     for name in names:
-        res = check_draft(lemmas[name]["gold"], lemmas[name]["source"])
-        control["fails"] += len(res["fails"])
-        control["flags"] += len(res["flags"])
+        g = lemmas[name]["gold"]
+        blob = "\n".join([g["etymology_note"], g["distinctions"], *g["key_theological_notes"],
+                          *[c["summary"] + " " + " ".join(c["strongs"]) for c in g["semantic_contrasts"]]])
+        control["problems"] += len(check_text(blob, lemmas[name]["source"]))
 
     rows = {}
     for model in args.models:
         rows[model] = []
         for name in names:
-            example = lemmas[next(n for n in names if n != name)]
             print(f"[{model}] drafting {name} ...", flush=True)
-            r = draft_lemma(args.host, model, example, lemmas[name], args.num_ctx, args.retries)
+            r = draft_lemma(args.host, model, lemmas[name], args.num_ctx, args.retries)
             r["lemma"] = name
             if budget and r["draft"] is not None and not r["final"]["fails"]:
                 r["verify"] = verify(budget, args.verify_model, lemmas[name]["source"], r["draft"],

@@ -29,8 +29,8 @@ Dataset growth continues through the later books while the app is built on the r
 ## Drafting pipeline
 
 1. **Extract by script.** Strong's numbers, definitions, KJV counts, source quotations and verse text are copied exactly, and counts are computed. No model is involved.
-2. **Draft locally.** A local Ollama model drafts only the compiled fields: etymology notes, distinctions, contrast summaries and theological notes. It sees only the raw source text for that lemma. Output is tagged `derived` and `unreviewed`, and the model is recorded in `drafted_by`.
-3. **Check automatically.** Drafts with a Strong's number or a bare number that is not in the source are rejected and retried. Greek, Hebrew and verse references not found in the source are flagged.
+2. **Draft locally.** A local Ollama model drafts only the compiled fields: etymology notes, distinctions, contrast summaries and theological notes. It sees only the raw source text for that lemma, and every statement it writes must carry a verbatim quote from that text. A field the sources say nothing about stays empty. Output is tagged `derived` and `unreviewed`, and the model is recorded in `drafted_by`.
+3. **Check automatically.** A draft is rejected and retried if any quote is not verbatim in a single source field, or if it contains a Strong's number, number, Greek or Hebrew word, or verse reference that is not in the source. Statement wording that appears nowhere in the source is flagged for review.
 4. **Audit with a stronger model.** Each passing draft is compared against its source text, and any unsupported statement is listed. Recorded in `verified_by`.
 5. **Review.** A person checks the flagged items and a random sample, then promotes drafts to `reviewed`.
 
@@ -62,6 +62,7 @@ None of the sources reviewed tested Greek or Hebrew, so the pilot decides. If a 
 - Public repo, named `lexicon-graph`
 - Source lock: Strong's, Young's, Bullinger, Thayer's and the KJV text, nothing else
 - Local drafting plus automated checks and a grounded stronger-model audit, with human review
+- No padded general knowledge: every drafted statement must carry a verbatim source quote, or it is rejected
 - Rollout order: epistles, gospels, rest of the New Testament, then the Old Testament
 
 ## Still open
@@ -74,5 +75,6 @@ See the open questions in [`spec.md`](spec.md): verse-to-word mapping and parsin
 - [ ] Write the JSON Schema from the sample, with `source`, `derived`, `scholarly_status`, `drafted_by` and `verified_by` fields
 - [ ] Split the sample into `data/lemmas/G25.json` and `G26.json`
 - [ ] Add CI that validates the schema and fails on any source outside the five
-- [ ] Run the pilot locally and compare the three models
+- [x] Pilot round 1 (2 lemmas): qwen3.5:9b stayed closest to the source; granite and llama added outside material
+- [ ] Rerun the pilot with the quote requirement, then on 15 to 20 lemmas once raw source text exists
 - [ ] Decide the open questions that touch the source lock

@@ -265,7 +265,7 @@ Each workflow starts at a passage and uses several features in sequence. Feature
 
 1. Add new lemmas by running the ingestion script against the Strong's-numbered source texts. The script copies every sourced field exactly and computes counts.
 2. A local model drafts the compiled fields (etymology notes, contrast summaries, theological notes), each tagged `derived` and `unreviewed`, with the model name and version recorded in `drafted_by`.
-3. Automated checks reject drafts containing numbers or Strong's numbers that are not in the source, and flag Greek, Hebrew or verse references the source does not contain. Rejected drafts go back to the model.
+3. Automated checks reject any draft whose statements lack a verbatim source quote, or that contains a number, Strong's number, Greek or Hebrew word, or verse reference not in the source. Wording found nowhere in the source is flagged. Rejected drafts go back to the model.
 4. A stronger model audits each passing draft against its source text and lists any statement the source does not support, recorded in `verified_by`.
 5. A reviewer checks the flagged items and a random sample, then promotes drafts to reviewed.
 6. CI validates the schema and fails on any source outside the locked list.

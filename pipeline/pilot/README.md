@@ -4,16 +4,22 @@ Compares local Ollama models on drafting the compiled ("derived") fields of a le
 
 ## What it tests
 
-Each lemma in the sample is drafted with the *other* lemma as the few-shot example (leave-one-out), then the sample's own fields serve as a control. Fields drafted: `etymology_note`, `distinctions`, `semantic_contrasts`, `key_theological_notes`. The `lxx_usage` summary is left out until raw Strong's Hebrew and Septuagint text is in `data/raw/`, because the sample has no source text to draft it from.
+Each lemma is drafted from its own source fields only. The prompt carries one made-up format example (never another lemma's text), so models cannot copy wording from a sibling entry. The sample's own derived fields are checked as a control. Fields drafted: `etymology_note`, `distinctions`, `semantic_contrasts`, `key_theological_notes`. The `lxx_usage` summary is left out until raw Strong's Hebrew and Septuagint text is in `data/raw/`, because the sample has no source text to draft it from.
 
 Everything copied from a source (Strong's number, definitions, KJV counts, verse text) is meant to be extracted by script, not drafted, so it is not part of this pilot.
 
+## Source lock: every statement carries a quote
+
+Each drafted statement is `{text, quote}` (a contrast is `{strongs, summary, quote}`). The quote must be copied character for character from one field of the source. A field the source says nothing about is an empty list. `checks.to_fields()` turns a checked draft into the plain dataset fields plus an `evidence` list of the quotes.
+
 ## Checks (`checks.py`)
 
-- **Fails** (draft is rejected and retried): wrong JSON shape, a Strong's number not in the source, a bare number not in the source.
-- **Flags** (a person or the verifier looks): a Greek or Hebrew word, or a verse reference, not found verbatim in the source.
+- **Fails** (draft is rejected and retried): wrong JSON shape; a quote that is not verbatim inside one source field (including one stitched from two fields); a Strong's number, bare number, Greek or Hebrew word, or verse reference not in the source.
+- **Flags** (a person or the verifier looks): words in a statement that appear nowhere in the source. This is where padded wording shows up. The check is crude, so flags are for review, not an automatic rejection.
 
-The control row in the report shows how many flags the sample's own fields produce. Treat that as the noise floor.
+The check cannot tell whether a quote supports the statement written beside it. That judgement is left to the optional Claude audit and to the human reviewer.
+
+The control row in the report counts items in the sample's own fields that are not in the five sources. The models should score at or near zero.
 
 ## Run it
 
@@ -30,7 +36,7 @@ python3 -m unittest discover -s tests -v
 
 Output goes to `pilot_out/`: one JSON file per model plus `report.md` with first-pass and final pass rates, tokens, seconds, output tokens per second, and a projection to 8,000 lemmas.
 
-If a model is slow or fails to load, it may not fit in 8 GB with the context window. Lower `--num-ctx`, but note that prompts run about 4K tokens and a retry adds more; Ollama truncates silently past the limit.
+If a model is slow or fails to load, it may not fit in 8 GB with the context window. Lower `--num-ctx`, but note that prompts run about 2.3K tokens and a retry adds more; Ollama truncates silently past the limit.
 
 ## Claude verification (optional, costs money)
 
