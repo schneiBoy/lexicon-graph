@@ -8,6 +8,7 @@ Early planning. The repo currently holds the product spec and a two-word sample 
 
 ## Contents
 
+- [`docs/plan.md`](docs/plan.md): the working plan: order of work, drafting pipeline, local model shortlist, cost notes, decisions and next steps
 - [`docs/spec.md`](docs/spec.md): features, workflows, data model, architecture, repo layout, risks and roadmap
 - [`data/samples/agape_agapao_lexical_sample.json`](data/samples/agape_agapao_lexical_sample.json): sample entries for G26 and G25, with LXX background, translation variants, morphology and KJV verse layers for John 3:16 and John 21:15–17
 - [`data/samples/agape_agapao_resource_description.md`](data/samples/agape_agapao_resource_description.md): what the sample contains and which sources it draws on
