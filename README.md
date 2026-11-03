@@ -1,0 +1,29 @@
+# lexicon-graph
+
+A structured, source-locked graph of Biblical Greek and Hebrew lexical data, designed to power word-study apps: a tap-a-word reader, word-study builder, translation comparator, concept graph, grounded AI Q&A and more.
+
+## Status
+
+Early planning. The repo currently holds the product spec and a two-word sample dataset (agapē G26 and agapaō G25). The schema, pipeline and app described in the spec do not exist yet.
+
+## Contents
+
+- [`docs/spec.md`](docs/spec.md): features, workflows, data model, architecture, repo layout, risks and roadmap
+- [`data/samples/agape_agapao_lexical_sample.json`](data/samples/agape_agapao_lexical_sample.json): sample entries for G26 and G25, with LXX background, translation variants, morphology and KJV verse layers for John 3:16 and John 21:15–17
+- [`data/samples/agape_agapao_resource_description.md`](data/samples/agape_agapao_resource_description.md): what the sample contains and which sources it draws on
+
+## Source lock
+
+All lexical data comes from exactly these five sources, and the project does not add to or swap them:
+
+- Strong's Exhaustive Concordance, Greek and Hebrew
+- Young's Analytical Concordance
+- Bullinger's Critical Lexicon and Companion Bible (including Appendix 135)
+- Thayer's Greek-English Lexicon of the New Testament
+- The KJV text for the verse layer
+
+Fields compiled rather than quoted from these sources are tagged `derived`. See the spec's design principles for how the lock is enforced.
+
+## License
+
+Not yet chosen. The dataset license is an open question in the spec. Until a license file is added, all rights are reserved by default.

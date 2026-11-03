@@ -1,0 +1,444 @@
+{
+  "words": {
+    "agape": {
+      "greek": "ἀγάπη",
+      "transliteration": "agapē",
+      "pronunciation": "ag-ah'-pay",
+      "strongs": {
+        "number": "G26",
+        "part_of_speech": "Noun, Feminine",
+        "definition": "love, i.e. affection or benevolence; specially (plural) a love-feast",
+        "kjv_translations": ["love (86x)", "charity (28x)", "dear (1x)", "charitably (1x)", "feasts of charity (1x)"],
+        "derivation": "From G25 (ἀγαπάω)",
+        "tdnt": "1:21, 5"
+      },
+      "frequency": {
+        "nt_approx": 116,
+        "notes": "Most frequent in the Johannine writings and Paul. Rare outside the New Testament in the elevated Christian sense."
+      },
+      "related_words": [
+        { "strongs": "G25", "greek": "ἀγαπάω", "transliteration": "agapaō", "relation": "cognate verb" },
+        { "strongs": "G27", "greek": "ἀγαπητός", "transliteration": "agapētos", "relation": "cognate adjective – 'beloved'" },
+        { "strongs": "G5368", "greek": "φιλέω", "transliteration": "phileō", "relation": "common semantic contrast (friendship / affectionate love)" },
+        { "strongs": "G5373", "greek": "φιλία", "transliteration": "philia", "relation": "related noun – friendship" }
+      ],
+      "etymology_note": "The noun is largely a Biblical and ecclesiastical development. While related to the verb ἀγαπάω (itself of uncertain origin, possibly linked to ἄγαν 'much'), the elevated Christian sense of self-giving, preferential love is primarily a New Testament phenomenon rather than a classical Greek inheritance.",
+      "youngs": {
+        "literal_meaning": "love",
+        "note": "Grouped under the English heading LOVE (noun). Shows the underlying Greek ἀγάπη and distinguishes it from other words also translated 'love'."
+      },
+      "bullinger": {
+        "critical_lexicon_summary": "Love that is self-denying and compassionately devoted to its object. The highest word for love; a term largely unknown in this elevated sense outside the New Testament. First exhibited by Christ; expresses God's relation to us and the distinctive character of the Christian life toward the brethren and all.",
+        "companion_bible_note": "Characteristic Johannine word (see App-135). Used of divine love and the love that should mark believers."
+      },
+      "thayers": {
+        "definition": "1. affection, good-will, love, benevolence: of the love of men to men (especially Christian love), of men toward God, of God toward men and toward Christ, and of Christ toward men. 2. In the plural: love-feasts (agapae) — fellowship meals expressing mutual love.",
+        "key_note": "A purely Biblical and ecclesiastical word. In signification it follows the verb ἀγαπάω."
+      },
+      "distinctions": "In New Testament usage, agapē typically denotes a deliberate, preferential, self-giving love (often with divine or distinctly Christian force). It is frequently contrasted with phileō/philia (warm personal affection or friendship love), though the two can overlap in some contexts.",
+      "semantic_contrasts": [
+        {
+          "word": "φιλέω / φιλία (phileō / philia)",
+          "strongs": ["G5368", "G5373"],
+          "summary": "Phileō/philia typically emphasizes warm personal affection, friendship, and emotional attachment. Agapē more often stresses deliberate choice, preference, and self-giving commitment. The distinction is pedagogically useful (especially in John 21) but not absolute in every context."
+        }
+      ],
+      "lxx_usage": {
+        "frequency": "Relatively rare as a noun (approximately 15–20 occurrences depending on the edition)",
+        "primary_hebrew": "אַהֲבָה (ʾahăbâ)",
+        "distribution": "Most concentrated in the Song of Solomon (about 11 times), where it appears in a romantic/erotic context. Also occurs in a few other places (e.g., 2 Samuel 13:15, Jeremiah 2:2, Ecclesiastes).",
+        "semantic_range": "Broad equivalent of the Hebrew noun for love. Includes romantic love (Song of Solomon) and, in at least one case, disordered desire (2 Samuel 13:15 – Amnon’s ‘love’ for Tamar).",
+        "note": "The noun was uncommon in secular Greek literature of the period; the LXX helped popularize it. It does not yet carry the specialized elevated Christian sense that becomes prominent in the New Testament."
+      },
+      "selected_lxx_examples": [
+        {
+          "reference": "Song of Solomon 2:4",
+          "greek": "εἰσαγάγετέ με εἰς οἶκον τοῦ οἴνου, τάξατε ἐπ’ ἐμὲ ἀγάπην",
+          "hebrew_concept": "אַהֲבָה",
+          "note": "Romantic/love context"
+        },
+        {
+          "reference": "Song of Solomon 8:6-7",
+          "greek": "ὅτι κραταιὰ ὡς θάνατος ἀγάπη...",
+          "hebrew_concept": "אַהֲבָה",
+          "note": "Famous description of the power of love"
+        },
+        {
+          "reference": "2 Samuel 13:15",
+          "greek": "καὶ ἐμίσησεν αὐτὴν Αμνων μῖσος μέγα σφόδρα, ὅτι μέγα τὸ μῖσος ὃ ἐμίσησεν αὐτήν ὑπὲρ τὴν ἀγάπην ἣν ἠγάπησεν αὐτήν",
+          "hebrew_concept": "אַהֲבָה",
+          "note": "Disordered/lustful 'love' that turned to hatred"
+        }
+      ],
+      "translation_variants": {
+        "kjv": {
+          "renderings": ["love (≈86×)", "charity (28×)", "dear", "charitably", "feasts of charity"],
+          "note": "‘Charity’ is used especially in 1 Corinthians 13 and other passages emphasizing Christian virtue. In 1611 English, ‘charity’ meant Christian love (caritas), not merely almsgiving."
+        },
+        "modern_versions": {
+          "renderings": ["love (almost always)"],
+          "examples": ["ESV", "NASB", "NIV", "CSB", "NKJV"],
+          "note": "Translators abandoned ‘charity’ because the English word had narrowed in meaning to ‘charitable giving’ or ‘tolerance.’"
+        },
+        "older_english": {
+          "note": "Wycliffe and other pre-KJV versions often used ‘charity,’ influenced by the Latin Vulgate’s caritas."
+        }
+      },
+      "morphology_common_forms": [
+        { "form": "ἀγάπη", "parsing": "N-NSF", "note": "Nominative singular" },
+        { "form": "ἀγάπην", "parsing": "N-ASF", "note": "Accusative singular" },
+        { "form": "ἀγάπης", "parsing": "N-GSF", "note": "Genitive singular" },
+        { "form": "ἀγάπῃ", "parsing": "N-DSF", "note": "Dative singular" },
+        { "form": "ἀγάπαις", "parsing": "N-DPF", "note": "Dative plural (love-feasts)" }
+      ],
+      "key_theological_notes": [
+        "Central term for the distinctive Christian understanding of love — deliberate, self-giving, and rooted in God’s own character.",
+        "1 Corinthians 13 provides the classic extended description of agapē in action.",
+        "1 John 4:8, 16 famously declares ‘God is love’ (ὁ θεὸς ἀγάπη ἐστίν).",
+        "Frequently linked to the new commandment to love one another (John 13:34-35; 15:12).",
+        "In the plural (ἀγάπαι), it can refer to the early Christian love-feasts (Jude 12)."
+      ],
+      "occurrences_sample": [
+        {
+          "reference": "Matthew 24:12",
+          "form": "ἀγάπη",
+          "kjv": "love",
+          "context": "the love of many shall wax cold"
+        },
+        {
+          "reference": "John 15:9-10",
+          "form": "ἀγάπῃ",
+          "kjv": "love",
+          "context": "Abide in my love"
+        },
+        {
+          "reference": "John 15:13",
+          "form": "ἀγάπην",
+          "kjv": "love",
+          "context": "Greater love hath no man than this"
+        },
+        {
+          "reference": "John 17:26",
+          "form": "ἀγάπη",
+          "kjv": "love",
+          "context": "the love wherewith thou hast loved me"
+        },
+        {
+          "reference": "Romans 5:5, 8",
+          "form": "ἀγάπη",
+          "kjv": "love",
+          "context": "the love of God is shed abroad... God commendeth his love"
+        },
+        {
+          "reference": "Romans 13:10",
+          "form": "ἀγάπη",
+          "kjv": "love",
+          "context": "Love worketh no ill... love is the fulfilling of the law"
+        },
+        {
+          "reference": "1 Corinthians 13:1-13",
+          "form": "ἀγάπη",
+          "kjv": "charity / love",
+          "context": "The classic extended description of love"
+        },
+        {
+          "reference": "Galatians 5:22",
+          "form": "ἀγάπη",
+          "kjv": "love",
+          "context": "fruit of the Spirit is love"
+        },
+        {
+          "reference": "Ephesians 3:19",
+          "form": "ἀγάπην",
+          "kjv": "love",
+          "context": "to know the love of Christ"
+        },
+        {
+          "reference": "Colossians 3:14",
+          "form": "ἀγάπην",
+          "kjv": "charity",
+          "context": "put on charity, which is the bond of perfectness"
+        },
+        {
+          "reference": "1 John 4:7-12, 16-19",
+          "form": "ἀγάπη",
+          "kjv": "love",
+          "context": "God is love; perfect love casteth out fear"
+        },
+        {
+          "reference": "Jude 1:12",
+          "form": "ἀγάπαις",
+          "kjv": "feasts of charity",
+          "context": "These are spots in your feasts of charity"
+        }
+      ]
+    },
+    "agapao": {
+      "greek": "ἀγαπάω",
+      "transliteration": "agapaō",
+      "pronunciation": "ag-ap-ah'-o",
+      "strongs": {
+        "number": "G25",
+        "part_of_speech": "Verb",
+        "definition": "to love (in a social or moral sense):—(be-)love(-ed)",
+        "kjv_translations": ["love (135x)", "beloved (7x)"],
+        "derivation": "Perhaps from ἄγαν (agan, 'much'); compare G5368",
+        "tdnt": "1:21, 5"
+      },
+      "frequency": {
+        "nt_approx": 143,
+        "notes": "Very frequent in the Gospel and Epistles of John. Also common in Paul and the Synoptics."
+      },
+      "related_words": [
+        { "strongs": "G26", "greek": "ἀγάπη", "transliteration": "agapē", "relation": "cognate noun" },
+        { "strongs": "G27", "greek": "ἀγαπητός", "transliteration": "agapētos", "relation": "cognate adjective – 'beloved'" },
+        { "strongs": "G5368", "greek": "φιλέω", "transliteration": "phileō", "relation": "common semantic contrast (friendship / affectionate love)" }
+      ],
+      "etymology_note": "Origin uncertain. Possibly related to ἄγαν (‘much’). In classical Greek the verb existed but was less prominent than phileō. In the LXX it became the standard rendering of Hebrew ʾāhab. The New Testament develops a stronger emphasis on deliberate, self-giving love, especially in Johannine and Pauline usage.",
+      "youngs": {
+        "literal_meaning": "to love",
+        "note": "Grouped under the English heading LOVE (verb). Distinguishes the underlying Greek ἀγαπάω from other verbs also rendered 'love'."
+      },
+      "bullinger": {
+        "critical_lexicon_summary": "To love with a self-denying, devoted love — the verbal counterpart to the elevated sense of agapē.",
+        "companion_bible_note": "App-135. Carefully distinguished from phileō in key passages, especially John 21:15-17."
+      },
+      "thayers": {
+        "definition": "to love, to be full of good-will and exhibit the same; with a personal object: to have a preference for, wish well to, regard the welfare of. Used of God's saving love (John 3:16), Christ's self-sacrificing love, and the believer's love for God, Christ, and others. With impersonal objects: to take pleasure in, prize, be unwilling to abandon.",
+        "key_note": "When used of love to God or Christ it involves affectionate reverence, prompt obedience, and grateful recognition of benefits. Frequently contrasted with φιλέω."
+      },
+      "distinctions": "Agapaō generally emphasizes choice, preference, esteem, and committed goodwill (a love of the will). Phileō emphasizes warm personal affection, friendship, and emotional attachment. The distinction is pedagogically useful and is clearly marked in John 21:15-17, although the verbs are not always rigidly opposed in every context.",
+      "semantic_contrasts": [
+        {
+          "word": "φιλέω (phileō)",
+          "strongs": ["G5368"],
+          "summary": "Phileō typically emphasizes warm personal affection, friendship, and emotional attachment. Agapaō more often stresses deliberate choice, preference, and self-giving commitment. Classic illustration in John 21:15-17, where Jesus begins with agapaō and Peter answers with phileō."
+        }
+      ],
+      "lxx_usage": {
+        "frequency": "Approximately 215 times in the LXX",
+        "primary_hebrew": "אָהַב (ʾāhab / ahab)",
+        "distribution": "The dominant Greek rendering of the common Hebrew verb for love across the entire Septuagint.",
+        "semantic_range": "Very broad, matching the Hebrew: parental/family love (Genesis 22:2 – Abraham and Isaac), romantic love (Genesis 29:18 – Jacob and Rachel; Song of Solomon), disordered or lustful desire (2 Samuel 13:15 – Amnon and Tamar), love for God, love for neighbor, and God's love for His people.",
+        "note": "The LXX translators strongly preferred agapaō over phileō or eraō as the default equivalent of ʾāhab. The verb does not yet carry the specialized elevated Christian sense that becomes prominent in the New Testament."
+      },
+      "selected_lxx_examples": [
+        {
+          "reference": "Genesis 22:2",
+          "greek": "τὸν υἱόν σου τὸν ἀγαπητόν, ὃν ἠγάπησας",
+          "hebrew_concept": "אָהַב",
+          "note": "Abraham’s love for Isaac"
+        },
+        {
+          "reference": "Genesis 29:18",
+          "greek": "ἠγάπησεν δὲ Ἰακὼβ τὴν Ῥαχήλ",
+          "hebrew_concept": "אָהַב",
+          "note": "Jacob’s romantic love for Rachel"
+        },
+        {
+          "reference": "Deuteronomy 6:5",
+          "greek": "καὶ ἀγαπήσεις κύριον τὸν θεόν σου...",
+          "hebrew_concept": "אָהַב",
+          "note": "The great commandment – love the Lord your God"
+        },
+        {
+          "reference": "2 Samuel 13:15",
+          "greek": "ὑπὲρ τὴν ἀγάπην ἣν ἠγάπησεν αὐτήν",
+          "hebrew_concept": "אָהַב",
+          "note": "Amnon’s lustful ‘love’ for Tamar that turned to hatred"
+        },
+        {
+          "reference": "Jeremiah 31:3 (LXX 38:3)",
+          "greek": "ἀγάπησιν αἰωνίαν ἠγάπησά σε",
+          "hebrew_concept": "אָהַב",
+          "note": "God’s everlasting love for His people"
+        }
+      ],
+      "translation_variants": {
+        "kjv": {
+          "renderings": ["love / loved / lovest (dominant)", "beloved (occasionally)"],
+          "note": "Very consistent. Almost never rendered ‘charity’ (that English word is reserved for the noun ἀγάπη)."
+        },
+        "modern_versions": {
+          "renderings": ["love / loved"],
+          "examples": ["ESV", "NASB", "NIV", "CSB", "NKJV"],
+          "note": "Substantially the same as the KJV; only minor stylistic differences."
+        }
+      },
+      "morphology_common_forms": [
+        { "form": "ἀγαπῶ / ἀγαπᾷς / ἀγαπᾷ", "parsing": "V-PAI-1/2/3S", "note": "Present active indicative" },
+        { "form": "ἀγαπᾶτε", "parsing": "V-PAM-2P / V-PAI-2P", "note": "Present imperative or indicative plural" },
+        { "form": "ἠγάπησα / ἠγάπησεν", "parsing": "V-AAI-1/3S", "note": "Aorist active indicative (very common)" },
+        { "form": "ἀγαπήσω", "parsing": "V-FAI-1S", "note": "Future active" },
+        { "form": "ἀγαπῶν / ἀγαπῶντες", "parsing": "V-PAP-NSM / NPM", "note": "Present active participle" },
+        { "form": "ἠγαπημένος", "parsing": "V-RPP-NSM", "note": "Perfect passive participle (‘beloved’)" }
+      ],
+      "key_theological_notes": [
+        "Used of God’s decisive, self-giving love in sending the Son (John 3:16; Romans 5:8).",
+        "Central to the love command: love God and love one another (Matthew 22:37-39; John 13:34; 15:12).",
+        "Describes Christ’s love for the church (Ephesians 5:25) and the believer’s responsive love.",
+        "John 21:15-17 is the classic passage illustrating the nuanced relationship between agapaō and phileō.",
+        "Can also be used of disordered loves (John 3:19 – men loved darkness; 2 Timothy 4:10 – Demas loved this present world)."
+      ],
+      "occurrences_sample": [
+        {
+          "reference": "Matthew 5:43-46",
+          "form": "ἀγαπήσεις / ἀγαπᾶτε / ἀγαπήσητε",
+          "kjv": "love / Love / love",
+          "context": "Love your enemies; if ye love them which love you"
+        },
+        {
+          "reference": "Matthew 22:37",
+          "form": "ἀγαπήσεις",
+          "kjv": "love",
+          "context": "Thou shalt love the Lord thy God"
+        },
+        {
+          "reference": "John 3:16",
+          "form": "ἠγάπησεν",
+          "morphology": "V-AIA-3S",
+          "kjv": "loved",
+          "context": "God so loved the world"
+        },
+        {
+          "reference": "John 3:19",
+          "form": "ἠγάπησαν",
+          "kjv": "loved",
+          "context": "men loved darkness rather than light"
+        },
+        {
+          "reference": "John 13:34",
+          "form": "ἀγαπᾶτε",
+          "kjv": "love",
+          "context": "A new commandment... that ye love one another"
+        },
+        {
+          "reference": "John 14:21, 23",
+          "form": "ἀγαπῶν / ἀγαπήσει",
+          "kjv": "loveth / love",
+          "context": "He that hath my commandments and keepeth them, he it is that loveth me"
+        },
+        {
+          "reference": "John 21:15-16",
+          "form": "ἀγαπᾷς",
+          "morphology": "V-PAI-2S",
+          "kjv": "lovest",
+          "context": "Jesus' first and second questions to Peter"
+        },
+        {
+          "reference": "Romans 5:8",
+          "form": "ἠγάπησεν",
+          "kjv": "loved",
+          "context": "God commendeth his love toward us, in that... Christ died for us"
+        },
+        {
+          "reference": "Romans 8:28, 37",
+          "form": "ἀγαπῶσιν / ἀγαπήσαντος",
+          "kjv": "love / loved",
+          "context": "them that love God... him that loved us"
+        },
+        {
+          "reference": "Ephesians 5:2, 25",
+          "form": "ἀγαπᾶτε",
+          "kjv": "love",
+          "context": "walk in love... Husbands, love your wives"
+        },
+        {
+          "reference": "1 John 4:10-11, 19-21",
+          "form": "ἠγάπησεν / ἀγαπῶμεν",
+          "kjv": "loved / love",
+          "context": "Herein is love... We love him, because he first loved us"
+        },
+        {
+          "reference": "Revelation 1:5",
+          "form": "ἀγαπῶντι",
+          "kjv": "loved",
+          "context": "Unto him that loved us, and washed us from our sins"
+        }
+      ]
+    }
+  },
+  "kjv_verse_layer": {
+    "john_3_16": {
+      "kjv_text": "For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.",
+      "greek_verb": "ἠγάπησεν (ēgapēsen)",
+      "strongs": "G25",
+      "lemma": "ἀγαπάω",
+      "form": "Aorist Active Indicative, 3rd person singular",
+      "notes": {
+        "lexical": "Decisive aorist of God's self-giving love toward the world.",
+        "strongs_thayer": "Expresses the benevolence of God in providing salvation by giving His Son.",
+        "bullinger": "Greek agapaō (App-135). Characteristic Johannine usage of divine love.",
+        "youngs": "Underlying Greek is ἀγαπάω."
+      }
+    },
+    "john_21_15_17": {
+      "kjv_text": {
+        "v15": "So when they had dined, Jesus saith to Simon Peter, Simon, son of Jonas, lovest thou me more than these? He saith unto him, Yea, Lord; thou knowest that I love thee. He saith unto him, Feed my lambs.",
+        "v16": "He saith to him again the second time, Simon, son of Jonas, lovest thou me? He saith unto him, Yea, Lord; thou knowest that I love thee. He saith unto him, Feed my sheep.",
+        "v17": "He saith unto him the third time, Simon, son of Jonas, lovest thou me? Peter was grieved because he said unto him the third time, Lovest thou me? And he said unto him, Lord, thou knowest all things; thou knowest that I love thee. Jesus saith unto him, Feed my sheep."
+      },
+      "greek_mapping": {
+        "jesus_v15": {
+          "word": "ἀγαπᾷς",
+          "transliteration": "agapās",
+          "strongs": "G25",
+          "lemma": "ἀγαπάω",
+          "type": "agapaō"
+        },
+        "peter_v15": {
+          "word": "φιλῶ",
+          "transliteration": "philō",
+          "strongs": "G5368",
+          "lemma": "φιλέω",
+          "type": "phileō"
+        },
+        "jesus_v16": {
+          "word": "ἀγαπᾷς",
+          "transliteration": "agapās",
+          "strongs": "G25",
+          "lemma": "ἀγαπάω",
+          "type": "agapaō"
+        },
+        "peter_v16": {
+          "word": "φιλῶ",
+          "transliteration": "philō",
+          "strongs": "G5368",
+          "lemma": "φιλέω",
+          "type": "phileō"
+        },
+        "jesus_v17": {
+          "word": "φιλεῖς",
+          "transliteration": "phileis",
+          "strongs": "G5368",
+          "lemma": "φιλέω",
+          "type": "phileō"
+        },
+        "peter_v17": {
+          "word": "φιλῶ",
+          "transliteration": "philō",
+          "strongs": "G5368",
+          "lemma": "φιλέω",
+          "type": "phileō"
+        }
+      },
+      "notes": {
+        "lexical": "Classic passage illustrating the agapaō / phileō distinction. Jesus begins with agapaō (committed/preferential love); Peter consistently answers with phileō (affectionate/friendship love); Jesus finally adopts Peter's term.",
+        "strongs_thayer": "Important locus for comparing the two verbs.",
+        "bullinger": "Note the different words (App-135). The Lord uses agapaō twice and phileō once; Peter always uses phileō.",
+        "youngs": "The single English root 'love/lovest' masks two distinct Greek verbs."
+      }
+    }
+  },
+  "meta": {
+    "purpose": "Comprehensive sample mapping of ἀγάπη (agapē, G26) and ἀγαπάω (agapaō, G25) across major lexical and concordance resources, with frequency data, related words, etymology notes, semantic contrasts, detailed LXX usage with selected examples, translation variants, common morphological forms, key theological notes, selected occurrences, and detailed KJV verse layers for John 3:16 and John 21:15-17.",
+    "sources_referenced": [
+      "Strong's Exhaustive Concordance",
+      "Young's Analytical Concordance",
+      "Bullinger's Critical Lexicon and Companion Bible (App-135)",
+      "Thayer's Greek-English Lexicon of the New Testament"
+    ],
+    "scope_note": "Occurrence lists and LXX examples are representative samples, not exhaustive. Full lists can be generated from Strong's-numbered texts or analytical concordances.",
+    "version": "3.0 – added morphology_common_forms, key_theological_notes, semantic_contrasts, etymology_note, and selected_lxx_examples"
+  }
+}
