@@ -34,6 +34,18 @@ Each sourced field or quote has a `provenance` object:
 - **Show me the original:** `pipeline/ingest/crop.py` renders the box from the scan. The same call feeds the vision model and the Claude image audit.
 - **RAG:** a retrieved chunk carries its `provenance`, so an answer can show the page crop beside any quotation.
 
+## Speed
+
+Measured on the working machine: cutting a crop straight from the PDF takes about 1 second whatever the page, because the scan is decoded each time. That is fine for one lookup and slow for bulk rechecks (16,000 crops would take about 4.5 hours on one core), and a cold disk or a web app would be slower.
+
+So the lookup is made instant ahead of time:
+
+1. **Pre-render every page once** with `pipeline/ingest/prerender.py` to a small grey WebP at 200 dpi. Measured: about 220 KB per Bullinger page and 420 KB for a dense Young's page, so roughly 0.7 GB for both books (an estimate from a few pages). A crop is then a slice of that image, about 0.07 seconds, with no PDF involved.
+2. **Pre-render each entry's crop at ingest** and store it under its record id. Serving it is a file read. The same crops go to the vision model and the Claude audit, which also means sending a small crop instead of a whole page.
+3. **Keep the page-to-fields index** in a small database so "everything on this page" is a lookup, not a scan.
+
+Pre-rendered pages and crops live outside git (about 0.7 GB), in whatever storage the project settles on for hosting.
+
 ## What is not in the repo
 
 The scans are too large (81 MB and 260 MB). They are pinned by hash in [`SOURCES.md`](../SOURCES.md) and re-fetched from archive.org when needed. Records for the OCR'd books point into the scans; records for Strong's and Thayer's point to the file and entry in the copies listed in SOURCES.md, since no scan is in hand for those.
