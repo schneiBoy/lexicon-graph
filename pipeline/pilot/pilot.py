@@ -227,7 +227,7 @@ def write_report(out, rows, control, projection_n):
     lines += ["", f"Control (the sample's own fields, text checks only): {control['problems']} items "
               f"across {control['n']} lemmas are not in the five sources. This is how much of the "
               "sample goes beyond its sources; the models should score at or near 0.", "",
-              "Fails are retried; flags list statement words found nowhere in the source (padding).", "",
+              "Fails are retried; flags list statement words that are not in the statement's own quote (padding).", "",
               f"## Projection to {projection_n} lemmas (local drafting)", ""]
     for model, rs in rows.items():
         per = sum(r["seconds"] for r in rs) / len(rs)

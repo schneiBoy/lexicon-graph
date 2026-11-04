@@ -10,12 +10,12 @@ Everything copied from a source (Strong's number, definitions, KJV counts, verse
 
 ## Source lock: every statement carries a quote
 
-Each drafted statement is `{text, quote}` (a contrast is `{strongs, summary, quote}`). The quote must be copied character for character from one field of the source. A field the source says nothing about is an empty list. `checks.to_fields()` turns a checked draft into the plain dataset fields plus an `evidence` list of the quotes.
+Each drafted statement is `{text, quote}` (a contrast is `{strongs, summary, quote}`). The quote must be copied character for character from one field of the source. A field the source says nothing about is an empty list. `checks.to_fields(draft, source)` turns a checked draft into the plain dataset fields plus an `evidence` list: each quote with the source field it came from (for example `bullinger.critical_lexicon_summary`), so a note can be attributed to its source automatically.
 
 ## Checks (`checks.py`)
 
-- **Fails** (draft is rejected and retried): wrong JSON shape; a quote that is not verbatim inside one source field (including one stitched from two fields); a Strong's number, bare number, Greek or Hebrew word, or verse reference not in the source.
-- **Flags** (a person or the verifier looks): words in a statement that appear nowhere in the source. This is where padded wording shows up. The check is crude, so flags are for review, not an automatic rejection.
+- **Fails** (draft is rejected and retried): wrong JSON shape; a quote that is not verbatim inside one source field (including one stitched from two fields); a `strongs` entry that is not exactly `G` or `H` plus digits; a Strong's number, bare number, Greek or Hebrew word, or verse reference not in the source.
+- **Flags** (a person or the verifier looks): words in a statement that are not in that statement's own quote. This is where padded wording shows up. The check is crude, so flags are for review, not an automatic rejection.
 
 The check cannot tell whether a quote supports the statement written beside it. That judgement is left to the optional Claude audit and to the human reviewer.
 

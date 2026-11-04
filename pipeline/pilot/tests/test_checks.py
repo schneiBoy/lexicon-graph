@@ -11,6 +11,7 @@ PILOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PILOT))
 
 import pilot  # noqa: E402
+import checks  # noqa: E402
 from checks import check_draft  # noqa: E402
 
 
@@ -77,6 +78,23 @@ class CheckTests(unittest.TestCase):
         d["distinctions"][0]["text"] += " It means deliberate, sacrificial devotion."
         flags = self.check(d)["flags"]
         self.assertTrue(any("sacrificial" in f for f in flags))
+
+    def test_padding_beyond_own_quote_is_flagged_even_if_word_is_elsewhere_in_source(self):
+        d = good_draft()
+        d["etymology_note"] = [{"text": "Derived from the verb, meaning benevolence toward neighbours.",
+                                "quote": "From G25 (ἀγαπάω)"}]
+        flags = self.check(d)["flags"]
+        self.assertTrue(any("benevolence" in f for f in flags), flags)
+
+    def test_strongs_must_be_exact_format(self):
+        d = good_draft()
+        d["semantic_contrasts"] = [{"strongs": ["$G5368"], "summary": "A contrast with another word entirely.",
+                                    "quote": GOOD_QUOTE}]
+        self.assertTrue(any("exactly" in f for f in self.check(d)["fails"]))
+
+    def test_source_field_is_recorded_for_each_quote(self):
+        fields = checks.to_fields(good_draft(), self.source)
+        self.assertEqual(fields["evidence"][0]["source_field"], "strongs.definition")
 
     def test_wrong_shape_fails(self):
         d = good_draft()

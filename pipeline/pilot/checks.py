@@ -9,8 +9,8 @@ Every drafted statement is {"text": ..., "quote": ...}. Two result levels:
   fails  the draft is rejected and retried: wrong shape; a quote that is not
          verbatim inside a single field of the source; a Strong's number, bare
          number, Greek or Hebrew word, or verse reference that is not in the source.
-  flags  for a person or the verifier: content words in a statement that appear
-         nowhere in the source (this is where padded wording shows up).
+  flags  for a person or the verifier: content words in a statement that are not
+         in the statement's OWN quote (this is where padded wording shows up).
 """
 import json
 import re
@@ -56,6 +56,7 @@ BOOKS = (
 )
 _STRONGS = re.compile(r"\b[GH]\d{1,4}\b")
 _REF = re.compile(rf"(?:[1-3] )?(?:{BOOKS}) \d{{1,3}}(?::\d{{1,3}}(?:[-–]\d{{1,3}})?)?")
+_STRONGS_EXACT = re.compile(r"^[GH]\d{1,4}$")
 _BARE_REF = re.compile(r"\b\d{1,3}:\d{1,3}(?:[-–]\d{1,3})?")
 _DIGITS = re.compile(r"\d+")
 _SCRIPT = re.compile(r"[Ͱ-Ͽἀ-῿֐-׿]+")
@@ -80,16 +81,25 @@ def _qnorm(text):
     return " ".join(text.split()).casefold()
 
 
-def _leaves(obj):
-    """Every string value in the source, one by one. A quote must sit inside ONE of these."""
+def _leaves(obj, path=""):
+    """Every string value in the source as (path, text). A quote must sit inside ONE of these."""
     if isinstance(obj, str):
-        yield obj
+        yield path, obj
     elif isinstance(obj, dict):
-        for v in obj.values():
-            yield from _leaves(v)
+        for k, v in obj.items():
+            yield from _leaves(v, f"{path}.{k}" if path else k)
     elif isinstance(obj, list):
-        for v in obj:
-            yield from _leaves(v)
+        for i, v in enumerate(obj):
+            yield from _leaves(v, f"{path}[{i}]")
+
+
+def source_field(quote, source):
+    """Path of the source field that contains the quote (e.g. 'bullinger.critical_lexicon_summary'), or None."""
+    q = _qnorm(quote)
+    for path, text in _leaves(source):
+        if q in _qnorm(text):
+            return path
+    return None
 
 
 def _statements(draft):
@@ -130,6 +140,8 @@ def validate_shape(draft):
                     not isinstance(item["strongs"], list) or not item["strongs"]
                     or not all(isinstance(s, str) for s in item["strongs"])):
                 problems.append(f"{field}[{i}].strongs must be a non-empty list of strings")
+            elif field == "semantic_contrasts" and not all(_STRONGS_EXACT.match(x) for x in item["strongs"]):
+                problems.append(f"{field}[{i}].strongs entries must look exactly like G26 or H157, with no other characters")
     return problems
 
 
@@ -142,7 +154,7 @@ def draft_text(draft):
     return "\n".join(parts)
 
 
-def to_fields(draft):
+def to_fields(draft, source):
     """Plain-string form of a checked draft, plus the quotes that back each statement."""
     def join(items):
         return " ".join(i["text"].strip() for i in items)
@@ -152,7 +164,8 @@ def to_fields(draft):
         "semantic_contrasts": [{"strongs": c["strongs"], "summary": c["summary"]}
                                for c in draft["semantic_contrasts"]],
         "key_theological_notes": [i["text"] for i in draft["key_theological_notes"]],
-        "evidence": [{"statement": label, "quote": quote} for label, _, quote in _statements(draft)],
+        "evidence": [{"statement": label, "quote": quote, "source_field": source_field(quote, source)}
+                     for label, _, quote in _statements(draft)],
     }
 
 
@@ -183,7 +196,7 @@ def check_draft(draft, source):
     if fails:
         return {"fails": fails, "flags": []}
 
-    leaves = [_qnorm(x) for x in _leaves(source)]
+    leaves = [_qnorm(t) for _, t in _leaves(source)]
     for label, _, quote in _statements(draft):
         if _bad_str(quote, MIN_QUOTE, MAX_QUOTE):
             fails.append(f"{label}: quote must be {MIN_QUOTE}-{MAX_QUOTE} characters copied from the source")
@@ -192,9 +205,9 @@ def check_draft(draft, source):
     fails += check_text(draft_text(draft), source)
 
     flags = []
-    source_blob = _qnorm(json.dumps(source, ensure_ascii=False))
-    for label, text, _ in _statements(draft):
-        missing = sorted({w.lower() for w in _WORD.findall(text) if w.lower()[:5] not in source_blob})
-        if missing:
-            flags.append(f"{label}: words not found in source: {', '.join(missing)}")
+    for label, text, quote in _statements(draft):
+        own = _qnorm(quote)
+        extra = sorted({w.lower() for w in _WORD.findall(text) if w.lower()[:5] not in own})
+        if extra:
+            flags.append(f"{label}: words not in its own quote: {', '.join(extra)}")
     return {"fails": fails, "flags": flags}
