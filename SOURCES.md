@@ -12,6 +12,15 @@ The Companion Bible and its appendixes (including App-135) are not a source. The
 | Bullinger's Critical Lexicon and Concordance to the English and Greek New Testament | [5th ed., 1908 scan on archive.org](https://archive.org/details/Criticallexiconconcordanceenggreeknt.5thed1908), re-read by OCR from the page images: `data/raw/bullinger/ocr/` (1,043 pages) | Public-domain text; the OCR is ours | Done, with OCR errors. The scan's own text layer is unusable. Greek and English read well on the LOVE pages. |
 | KJV text | Not yet chosen | n/a | Open. |
 
+## Pinned scans
+
+The page pointers in the graph refer to these exact files. They are not stored in the repo.
+
+| Scan | SHA-256 |
+| --- | --- |
+| Bullinger, `CriticalLexiconConcordance.EngGrkNT..Bullinger.1908._text.pdf` (1,043 pages) | `cf34e792b85f06e0b804247657c6606af61b1d0663a8e25b0813a96dc37f8668` |
+| Young's, `analyticalconcor0000youn_j4x7.pdf` (1,256 pages) | `695e2fdd7d110d55ebcd81a7640be764005ba7fb72a101a600912a289396ad6c` |
+
 ## What the check against the real sources found
 
 `pipeline/ingest/check_sample.py` compares the sample's sourced fields with the copies above.

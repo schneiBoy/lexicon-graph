@@ -23,7 +23,7 @@ def pdf_pages(pdf):
     return int(next(l.split()[1] for l in out.splitlines() if l.startswith("Pages:")))
 
 
-def ocr_page(pdf, page, out, dpi, lang):
+def ocr_page(pdf, page, out, dpi, lang, boxes=False):
     dest = out / f"{page:04d}.txt"
     with tempfile.TemporaryDirectory() as tmp:
         prefix = Path(tmp) / "p"
@@ -32,6 +32,10 @@ def ocr_page(pdf, page, out, dpi, lang):
         png = next(Path(tmp).glob("p*.png"))
         text = subprocess.run(["tesseract", str(png), "stdout", "-l", lang, "--psm", "1"],
                               check=True, capture_output=True, text=True).stdout
+        if boxes:  # word-level boxes: left, top, width, height in pixels at this dpi, plus confidence
+            tsv = subprocess.run(["tesseract", str(png), "stdout", "-l", lang, "--psm", "1", "tsv"],
+                                 check=True, capture_output=True, text=True).stdout
+            (out / f"{page:04d}.tsv").write_text(tsv, encoding="utf-8")
     dest.write_text(text, encoding="utf-8")
 
 
@@ -44,6 +48,8 @@ def main():
     ap.add_argument("--dpi", type=int, default=300)
     ap.add_argument("--lang", default="eng+grc")
     ap.add_argument("--workers", type=int, default=2)
+    ap.add_argument("--boxes", action="store_true",
+                    help="also write NNNN.tsv with a bounding box and confidence for every word (slower)")
     ap.add_argument("--time-budget", type=float, default=None,
                     help="stop starting new pages after this many seconds; rerun to continue")
     a = ap.parse_args()
@@ -60,7 +66,7 @@ def main():
     def work(page):
         if a.time_budget and time.time() - start > a.time_budget:
             return None
-        ocr_page(a.pdf, page, out, a.dpi, a.lang)
+        ocr_page(a.pdf, page, out, a.dpi, a.lang, a.boxes)
         return page
 
     done = 0

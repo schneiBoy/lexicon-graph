@@ -47,9 +47,11 @@ The goal is a graph and RAG index with no avoidable errors. We cannot prove zero
 4. **A local vision model looks at what is left.** Its input is a cropped image of the line, not the page. A change it cannot point to in the image is not applied and stays flagged.
 5. **Claude audits a sample.** A random sample of cleaned entries is checked against the images. The sample size sets the confidence bound on the remaining error rate, and spend is capped.
 
+Every sourced field and quote also carries a pointer to its page and position on the scan, so anything can be rechecked later; see [`provenance.md`](provenance.md).
+
 **A lemma enters the graph and the RAG index only when:**
 
-- every sourced field is verbatim in the cleaned source text, with a page reference, and OCR-derived text is tagged as such;
+- every sourced field is verbatim in the cleaned source text, with a provenance record (scan hash, page, box), and OCR-derived text is tagged as such;
 - no flagged spot is unresolved, and every correction is logged with the original reading kept beside it;
 - every entry with a flag has been checked against the page image by Claude or a person;
 - the audit sample of unflagged entries shows no errors, and its size and confidence bound are recorded. If an error is found, the rule that missed it is fixed and the sample is redrawn.
