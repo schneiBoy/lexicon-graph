@@ -1,0 +1,7 @@
+{
+ "pdf": "CriticalLexiconConcordance_EngGrkNT__Bullinger_1908__text.pdf",
+ "dpi": 300,
+ "lang": "eng+grc",
+ "psm": 1,
+ "tesseract": "tesseract 5.3.4"
+}
