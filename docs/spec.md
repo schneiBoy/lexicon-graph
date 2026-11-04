@@ -263,7 +263,7 @@ Each workflow starts at a passage and uses several features in sequence. Feature
 
 ### Maintainer extending the dataset
 
-1. Add new lemmas by running the ingestion script against the Strong's-numbered source texts. The script copies every sourced field exactly and computes counts.
+1. Add new lemmas by running the ingestion script against the Strong's-numbered source texts. The script copies every sourced field exactly and computes counts. Text from the OCR'd books (Bullinger and Young's) is first cleaned: several readings of the page vote, closed vocabularies settle flagged spots, a local vision model looks at what is left, and Claude audits a sample against the page images. A lemma is not added until it meets the quality bar in `docs/plan.md`.
 2. A local model drafts the compiled fields (etymology notes, contrast summaries, theological notes), each tagged `derived` and `unreviewed`, with the model name and version recorded in `drafted_by`.
 3. Automated checks reject any draft whose statements lack a verbatim source quote, or that contains a number, Strong's number, Greek or Hebrew word, or verse reference not in the source. Wording found nowhere in the source is flagged. Rejected drafts go back to the model.
 4. A stronger model audits each passing draft against its source text and lists any statement the source does not support, recorded in `verified_by`.
@@ -349,6 +349,7 @@ The locked sources are all old enough to be in the public domain, which keeps li
 | AI inventing claims | A model may add definitions or distinctions that no locked source states | Retrieval-only answers, required field citations, evals that fail uncited claims |
 | Derived-field quality | Machine-drafted summaries can drift from the sources | Tag as `derived` and `unreviewed`, require human review before release |
 | Source drift | A contributor or script quietly adds a new lexicon or commentary | Schema enum and CI check on `source`; changes only through `SOURCES.md` |
+| OCR errors in scanned sources | Bullinger and Young's exist only as scans read by OCR, so misread words, numbers or references could reach the graph and the RAG index | Multi-reading vote, vocabulary checks, vision-model pass, hand-checked answer key, and an image audit of a sample with a stated confidence bound; nothing is indexed until a lemma meets the quality bar in `docs/plan.md` |
 | Doctrinal overreach | Language data can be used to argue for a position the data does not support | Present language data and status flags; leave interpretation to the reader |
 
 ## Roadmap
@@ -359,8 +360,8 @@ The build runs in five phases, and each phase opens only after a data-quality ga
 flowchart TD
   P1["<b>Phase 1: Foundation</b><br/>Schema, SOURCES.md and the CI source lock<br/>Agapē and agapaō end to end, from the sample"]
   G1{{"Gate: the schema validates the sample data"}}
-  P2["<b>Phase 2: Dataset growth</b><br/>Drafting pilot, then epistles, gospels, rest of NT, then OT<br/>Drafted, checked, audited, then reviewed by a person"]
-  G2{{"Gate: epistles fully reviewed, every field has a source"}}
+  P2["<b>Phase 2: Dataset growth</b><br/>Drafting pilot, then epistles, gospels, rest of NT, then OT<br/>Source text cleaned, then drafted, checked, audited and reviewed by a person"]
+  G2{{"Gate: epistles fully reviewed, every field has a source, source text cleaned and audited"}}
   P3["<b>Phase 3: Core study app</b><br/>Tap-a-word reader, word study, translation comparator<br/>Contrast explorer showing scholarly status"]
   G3{{"Gate: every displayed field shows its source and status"}}
   P4["<b>Phase 4: AI and discovery</b><br/>Grounded Q&A and cross-reference engine<br/>Concept graph and distribution heatmaps"]
