@@ -58,6 +58,14 @@ Every sourced field and quote also carries a pointer to its page and position on
 
 The Strong's and Thayer's copies are third-party digitisations and get the same sampled audit against print-edition scans, which still need to be found. All of this is verified by script where it can be, and the check results are stored with the data.
 
+## Counts and references
+
+- **Counts need two independent sources that agree.** Young's Index-Lexicon lists every Greek word with the KJV renderings and their counts (for example ἀγαπάω: love 135, beloved 7). A Strong's-tagged KJV gives the same counts by script. A count enters the graph only when both agree; a disagreement goes to the page image.
+- **References come from the tagged KJV, not from Bullinger's lists.** Bullinger's reference lists are dense and error-prone to read by OCR. The verse list for a word is computed from the tagged KJV, and Bullinger's page is kept as a pointer and a cross-check.
+- **Young's: only the Index-Lexicon.** The main concordance (about 1,000 pages) repeats what the tagged KJV gives. The Greek Index-Lexicon (roughly PDF pages 1131 to 1200, to be confirmed) holds the literal meanings and counts, and joins to Strong's by Greek word.
+- **Bullinger: only the Critical Lexicon section** (two columns, reads well). The Greek-English concordance section is in four columns and reads badly, so it is not used for counts.
+- **The first tagged KJV tried does not work.** `kaiserlik/kjv` is scraped, has no licence, and 14 of its 27 New Testament books fail to parse. A tagged KJV that parses, is licensed, and reproduces Young's counts for G25 and G26 is still to be chosen.
+
 ## Local model
 
 Hardware: an 8 GB GPU, which fits roughly 7B to 9B models at 4-bit quantization.
@@ -107,5 +115,5 @@ See the open questions in [`spec.md`](spec.md): verse-to-word mapping and parsin
 - [ ] Build the cleanup pipeline: multi-reading vote, vocabulary fixes, vision-model pass, scoring against the answer key
 - [ ] Regenerate the pilot lemmas' sourced fields from the real texts and rerun the drafting pilot on them
 - [ ] Find print-edition scans to audit the Strong's and Thayer's digitisations against
-- [ ] Choose a Strong's-tagged KJV for the counts (open decision)
+- [ ] Choose a Strong's-tagged KJV that parses, is licensed, and reproduces Young's counts for G25 and G26
 - [ ] Decide the open questions that touch the source lock
