@@ -56,7 +56,7 @@ Every sourced field and quote also carries a pointer to its page and position on
 - every entry with a flag has been checked against the page image by Claude or a person;
 - the audit sample of unflagged entries shows no errors, and its size and confidence bound are recorded. If an error is found, the rule that missed it is fixed and the sample is redrawn.
 
-The Strong's and Thayer's copies are third-party digitisations and get the same sampled audit against print-edition scans, which still need to be found. All of this is verified by script where it can be, and the check results are stored with the data.
+The Strong's and Thayer's copies are third-party digitisations and get the same sampled audit against print-edition scans. The Thayer's scan is in hand and shows its digital copy is normalised (abbreviations expanded, references reformatted), so for Thayer's the scan is the authority and the digital copy is a second reading; see `SOURCES.md`. The Strong's scan is still to be pinned. All of this is verified by script where it can be, and the check results are stored with the data.
 
 ## Counts and references
 
@@ -114,6 +114,8 @@ See the open questions in [`spec.md`](spec.md): verse-to-word mapping and parsin
 - [ ] Choose 15 to 20 pilot lemmas and build the hand-checked answer key from the page images
 - [ ] Build the cleanup pipeline: multi-reading vote, vocabulary fixes, vision-model pass, scoring against the answer key
 - [ ] Regenerate the pilot lemmas' sourced fields from the real texts and rerun the drafting pilot on them
-- [ ] Find print-edition scans to audit the Strong's and Thayer's digitisations against
+- [x] Thayer's print scan in hand and pinned; the digital copy is normalised, not verbatim
+- [ ] Pin the Strong's 1890 scan (downloaded by the project owner, too large to upload) and audit the Strong's digitisation against it
+- [ ] Decide how Thayer's quotes are stored: print text with the digital copy as a cross-check
 - [ ] Choose a Strong's-tagged KJV that parses, is licensed, and reproduces Young's counts for G25 and G26
 - [ ] Decide the open questions that touch the source lock
