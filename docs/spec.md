@@ -187,7 +187,7 @@ The lexical sources are exactly these five, and the app, the pipeline and the AI
 
 - Strong's Exhaustive Concordance, Greek and Hebrew (numbering, glosses, derivation, KJV counts)
 - Young's Analytical Concordance (English-to-original groupings)
-- Bullinger's Critical Lexicon and Companion Bible, including Appendix 135
+- Bullinger's Critical Lexicon and Concordance to the English and Greek New Testament
 - Thayer's Greek-English Lexicon of the New Testament
 - The KJV text for the verse layer
 

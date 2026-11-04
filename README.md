@@ -22,7 +22,7 @@ All lexical data comes from exactly these five sources, and the project does not
 
 - Strong's Exhaustive Concordance, Greek and Hebrew
 - Young's Analytical Concordance
-- Bullinger's Critical Lexicon and Companion Bible (including Appendix 135)
+- Bullinger's Critical Lexicon and Concordance to the English and Greek New Testament
 - Thayer's Greek-English Lexicon of the New Testament
 - The KJV text for the verse layer
 

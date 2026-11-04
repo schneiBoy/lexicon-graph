@@ -62,12 +62,19 @@ VERIFY_SYSTEM = (
 TOTAL_KEYS = ("prompt_tokens", "output_tokens", "seconds", "gen_seconds")
 
 
+def drop_companion(source):
+    """The Companion Bible is not one of the project's sources, so its note is not offered to the models."""
+    if isinstance(source.get("bullinger"), dict):
+        source["bullinger"] = {k: v for k, v in source["bullinger"].items() if k != "companion_bible_note"}
+    return source
+
+
 def load_lemmas(path):
     words = json.loads(Path(path).read_text(encoding="utf-8"))["words"]
     lemmas = {}
     for name, w in words.items():
         lemmas[name] = {
-            "source": {k: w[k] for k in SOURCE_KEYS if k in w},
+            "source": drop_companion({k: w[k] for k in SOURCE_KEYS if k in w}),
             "gold": {
                 "etymology_note": w["etymology_note"],
                 "distinctions": w["distinctions"],
