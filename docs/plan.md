@@ -64,7 +64,7 @@ The Strong's and Thayer's copies are third-party digitisations and get the same 
 - **References come from the tagged KJV, not from Bullinger's lists.** Bullinger's reference lists are dense and error-prone to read by OCR. The verse list for a word is computed from the tagged KJV, and Bullinger's page is kept as a pointer and a cross-check.
 - **Young's: only the Index-Lexicon.** The main concordance (about 1,000 pages) repeats what the tagged KJV gives. The Greek Index-Lexicon (roughly PDF pages 1131 to 1200, to be confirmed) holds the literal meanings and counts, and joins to Strong's by Greek word.
 - **Bullinger: only the Critical Lexicon section** (two columns, reads well). The Greek-English concordance section is in four columns and reads badly, so it is not used for counts.
-- **Tagged KJV chosen: `mattatanner/kjv_strongs`.** It parses cleanly (31,102 verses) and reproduces Young's counts for G25 and G26 once helper-word tags are excluded (see `SOURCES.md`). The first one tried, `kaiserlik/kjv`, failed on 14 of 27 NT books. The chosen one states no licence, so its tag provenance must be confirmed before the dataset is published.
+- **Tagged KJV chosen: `mattatanner/kjv_strongs`.** It parses cleanly (31,102 verses) and reproduces Young's counts for G25 and G26 once helper-word tags are excluded (see `SOURCES.md`). The first one tried, `kaiserlik/kjv`, failed on 14 of 27 NT books. It has no licence file, but its owner has said it is meant for public use, so a copy is in `data/raw/kjv/`; a written licence and the origin of its tags should be confirmed before the dataset is published.
 
 ## Local model
 
@@ -118,5 +118,5 @@ See the open questions in [`spec.md`](spec.md): verse-to-word mapping and parsin
 - [ ] Pin the Strong's 1890 scan (downloaded by the project owner, too large to upload) and audit the Strong's digitisation against it
 - [ ] Decide how Thayer's quotes are stored: print text with the digital copy as a cross-check
 - [x] Strong's-tagged KJV chosen; counts for G25 and G26 match Young's
-- [ ] Confirm who made the KJV tags and under what terms, and find a licensed alternative if needed
+- [ ] Get a written licence from the owner of `kjv_strongs` and confirm where its tags came from (copy is in `data/raw/kjv/`)
 - [ ] Decide the open questions that touch the source lock
