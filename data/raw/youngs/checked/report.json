@@ -1,0 +1,21 @@
+{
+ "status": {
+  "one reading equals KJV": 640,
+  "verified (A = B = KJV)": 2236,
+  "readings disagree or one is missing": 468,
+  "A = B but differs from KJV": 858,
+  "never found in either reading": 1316
+ },
+ "skipped_A": {
+  "transliteration matches several Strong's numbers": 131,
+  "unknown headword": 160
+ },
+ "skipped_B": {
+  "transliteration matches several Strong's numbers": 136,
+  "unknown headword": 161
+ },
+ "gold": {
+  "queued": 11,
+  "verified and correct": 10
+ }
+}

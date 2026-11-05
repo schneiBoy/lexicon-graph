@@ -1,0 +1,192 @@
+{
+ "date": "2026-11-05",
+ "method": "random sample (seed 20261105) of entries that passed A=B=KJV; each read by eye from the 300 dpi column crop",
+ "entries": [
+  {
+   "strongs": "G3052",
+   "translit": "LOGIOS",
+   "pdf_page": 1180,
+   "checked_count": 1,
+   "read_from_image": 1,
+   "match": true
+  },
+  {
+   "strongs": "G1259",
+   "translit": "DIALLASSO",
+   "pdf_page": 1166,
+   "checked_count": 1,
+   "read_from_image": 1,
+   "match": true
+  },
+  {
+   "strongs": "G1230",
+   "translit": "DIAGINOMAI",
+   "pdf_page": 1166,
+   "checked_count": 3,
+   "read_from_image": 3,
+   "match": true
+  },
+  {
+   "strongs": "G1450",
+   "translit": "EGGUOS",
+   "pdf_page": 1168,
+   "checked_count": 1,
+   "read_from_image": 1,
+   "match": true
+  },
+  {
+   "strongs": "G4393",
+   "translit": "PROPHERO",
+   "pdf_page": 1189,
+   "checked_count": 2,
+   "read_from_image": 2,
+   "match": true
+  },
+  {
+   "strongs": "G2979",
+   "translit": "LAKTIZO",
+   "pdf_page": 1180,
+   "checked_count": 2,
+   "read_from_image": 2,
+   "match": true
+  },
+  {
+   "strongs": "G1177",
+   "translit": "DEKADUO",
+   "pdf_page": 1166,
+   "checked_count": 2,
+   "read_from_image": 2,
+   "match": true
+  },
+  {
+   "strongs": "G344",
+   "translit": "ANAKAMPTO",
+   "pdf_page": 1161,
+   "checked_count": 4,
+   "read_from_image": 4,
+   "match": true
+  },
+  {
+   "strongs": "G5004",
+   "translit": "TALAIPORIA",
+   "pdf_page": 1193,
+   "checked_count": 2,
+   "read_from_image": 2,
+   "match": true
+  },
+  {
+   "strongs": "G3834",
+   "translit": "PANOURGIA",
+   "pdf_page": 1184,
+   "checked_count": 5,
+   "read_from_image": 5,
+   "match": true
+  },
+  {
+   "strongs": "G3060",
+   "translit": "LOIDOROS",
+   "pdf_page": 1181,
+   "checked_count": 2,
+   "read_from_image": 2,
+   "match": true
+  },
+  {
+   "strongs": "G579",
+   "translit": "APOBLETOS",
+   "pdf_page": 1162,
+   "checked_count": 1,
+   "read_from_image": 1,
+   "match": true
+  },
+  {
+   "strongs": "G4377",
+   "translit": "PROSPHONEO",
+   "pdf_page": 1190,
+   "checked_count": 7,
+   "read_from_image": 7,
+   "match": true
+  },
+  {
+   "strongs": "G4027",
+   "translit": "PERIKATHARMA",
+   "pdf_page": 1186,
+   "checked_count": 1,
+   "read_from_image": 1,
+   "match": true
+  },
+  {
+   "strongs": "G4696",
+   "translit": "SPILOS",
+   "pdf_page": 1191,
+   "checked_count": 2,
+   "read_from_image": 2,
+   "match": true
+  },
+  {
+   "strongs": "G268",
+   "translit": "HAMARTOLOS",
+   "pdf_page": 1174,
+   "checked_count": 47,
+   "read_from_image": 47,
+   "match": true
+  },
+  {
+   "strongs": "G1689",
+   "translit": "EMBLEPO",
+   "pdf_page": 1170,
+   "checked_count": 12,
+   "read_from_image": 12,
+   "match": true
+  },
+  {
+   "strongs": "G2764",
+   "translit": "KERAMIKOS",
+   "pdf_page": 1179,
+   "checked_count": 1,
+   "read_from_image": 1,
+   "match": true
+  },
+  {
+   "strongs": "G2555",
+   "translit": "KAKOPOIOS",
+   "pdf_page": 1177,
+   "checked_count": 5,
+   "read_from_image": 5,
+   "match": true
+  },
+  {
+   "strongs": "G835",
+   "translit": "AULIZOMAI",
+   "pdf_page": 1164,
+   "checked_count": 2,
+   "read_from_image": 2,
+   "match": true
+  },
+  {
+   "strongs": "G3721",
+   "translit": "ORTHRIOS",
+   "pdf_page": 1184,
+   "checked_count": 1,
+   "read_from_image": 1,
+   "match": true
+  },
+  {
+   "strongs": "G1234",
+   "translit": "DIAGOGGUZO",
+   "pdf_page": 1166,
+   "checked_count": 2,
+   "read_from_image": 2,
+   "match": true
+  },
+  {
+   "strongs": "G1255",
+   "translit": "DIALALEO",
+   "pdf_page": 1166,
+   "checked_count": 2,
+   "read_from_image": 2,
+   "match": true
+  }
+ ],
+ "matches": 23,
+ "of": 23
+}

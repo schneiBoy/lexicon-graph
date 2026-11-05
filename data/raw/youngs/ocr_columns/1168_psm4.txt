@@ -1,0 +1,648 @@
+guile 7
+subtilty 2.
+
+DOMA δόμα x.
+gift 4.
+
+DOMA δῶμα π.
+house-top 7.
+
+DOREA δωρεά f.
+gift 11.
+
+DOREAN δωρεάν
+for naught x
+freely 6
+in vain ©
+without cause
+
+1.
+DOREMA δώρημα τ.
+gift 2.
+
+DOREO δωρέω
+
+give 3.
+DORON δῶρον n.
+
+gift 13
+
+offering r.
+
+DOSIS δόσις Κα
+gift:
+giving x.
+DOTES δότης
+giver 1.
+DOULAGOGEO δουλ-
+ἕω
+a bring into sub-
+jection x.
+
+DOULE δούλη Κ
+handmaid τ
+handmaiden 2.
+
+DOULEIA δουλεία 7,
+bondage s.
+
+DOULEUO δουλεύω
+be in bondage 4
+do service 3
+serve 18.
+
+DOULOO δουλόω
+bring into bond-
+age r
+make servant τ.
+Pass. be brought in
+bondage r
+become servant
+2
+
+be under bond-
+age 1.
+Partic. given tox
+in bondage x.
+DOULOS δοῦλος
+bond 6
+bondman r
+servant 120.
+
+DOXA δόξα f
+dignity 2
+glory 144
+honour 6
+praise 4
+worship τ
+*glorious (gen.) 6.
+¢glorious (dia and gen.) 15
+glorious (en and dat.) 3.
+DOXAZO δοξάζω
+glorify 54
+honour 3
+magnify 1.
+Pass. be made glorious
+
+have glory 2.
+Partie. full of glory x.
+DRACHME δραχμή 7.
+piece 2
+piece of silver 1,
+DRAKON δράκων
+dragon 13.
+DRASSOMAL δράσσο-
+μαι
+take 1.
+DREMO = TRECHO.
+DREPANON δρέπανον
+7.
+
+sickle 8.
+DROMOS δρόμος
+course 3.
+DUMI = DUNO.
+DUNAMAI δύναμαι
+be able 37
+
+be able to dor
+
+that 1s ΟἹ power
+
+I.
+DUNAMIS δύναμις f.
+
+ability 1
+abundance (M.
+
+power) x
+meaning r
+might 4
+πο deed r
+mighty work rr
+miracle 8
+power 77
+strength 7
+a I
+virtue
+wonitertl work
+
+worker of mir-
+acles (M.
+power) 1.
+‘mighty (gen.) 2
+Al. of power τ).
++mighty (en with dat.) τ.
+
+DUNAMOO δυναμόω
+strengthen x.
+
+DUNASTES δυνάστης
+mighty x
+of a author-
+
+ity
+Potentate 1.
+
+DUNATEO δυνατέω
+be mighty x.
+DUNATOS δυνατός
+able τὸ
+mighty 5
+pombe: (neut.)
+i
+stron
+that Tould I
+that is mighty x.
+As noun mighty man 1
+power τ.
+DUNO δύνω (δϑμι)
+be setting 1
+set 1.
+DUO δύο
+both 2
+twain τὸ
+two 116
+two men x
+two women 1.
+tana duo: two and two τ,
+two apiecez. Repeated
+by two and two x.
+
+DUSBASTAKTOS δυσ-
+
+βάστακτος
+grievous to be
+borne 2.
+
+DUSENTERIA δυσ-
+
+evrepla f.
+bloody flux τ.
+
+DUSERMENEUTOS
+
+ee Ea ΜᾺ
+-— τὰ be ut-
+
+ered
+DUSKOLOS a
+
+hard x.
+DUSKOLOS δυσκόλως
+hardly 3:
+DUSME δυσμή /.
+_West (9 1.) 5.
+DUSNOETOS δυσνόη-
+τος
+hard tobe under-
+stood τ.
+DUSPHEMIA δυσ-
+φημία Ὁ
+evil report x.
+
+EB
+El ἢ
+and 3
+either 8
+except it be x
+neither 3
+HOF 5
+OF 257
+or else 5
+or if x
+. what?
+te kai: or else x, yea and
+I.
+2
+but τ
+
+yall ©F DUS teapot i, Maer
+_thans See pleidn.
+Ε3 ἢ
+tsurely (with mén!) x.
+EAN ἐάν
+and if 4
+if τοῦ
+though τὰ
+when 2.
+tthough (kaiean)1. With
+kai: if (M. although) τ.
+With te: whether 3, or
+, though x. With mé:
+ἢ not 15, if no 1, except
+33, but 3. With mé
+proteron: beforex,
+former 2, first 2, at the
+first x.
+EANPER ἐάνπερ
+if 3.
+EAO édw
+commit (M.
+leave) 1
+leave x
+let x
+let alone x
+suffer 9.
+Imper, et alone 2 (M.
+= away 1).
+ECHEO ἠχέω
+roarir
+sound 1.
+ECHIDNA 2x.8va/f.
+viper 5.
+ECHO ἔχω
+be able r
+be in that case 1
+be old x
+be possessed
+with 2
+can
+could have r
+count 4
+dor
+have 607 (M, hold
+fast 1)
+hold 5
+hold fast x
+keep 1
+lie x
+retain r
+take for x
+use (M. have) τ.
+Partie. witht.
+
+Mi. accompany r.
+Partic. day following r
+next 2
+next day x.
+
+the bold (with parrhésia)
+τ; be diseased (with
+kak6s)2; beofage(with
+hélikia) 2; be rebuked
+(with ele@xis) 1; be sick
+(with kakos) 7; be with
+child (with en and
+gaster) 5; begin to
+amen (with —komp-
+soteron) 1; conceive
+(with koité) x5 eat (with
+- mnomé) 13; enjoy the
+| pleasures (with apolau-
+Sis) 1 ; fear (with phobos)
+1; go to law (with pl. of
+krina) 1; have not
+knowledge (with ag-
+nésia) 1; holdinreputa-
+tion(M. inhonour ; with
+entimos) 1; lie at the
+point of death (with es-
+chatds) x; recover (with
+kalos) 1; reign (with
+basileia) 1; thank (with
+charis) 3; with child
+(partic. with en and
+gaster)2. Withanafke:
+must needs 1, must of
+necessity 1, need 1, *be
+needful forz. Méecho:
+have not (M. be poor) 1,
+lack 1. Partic. sick
+people (with kakés) x.
+_ See ekstasis, tromos, etc.
+ECHOS ἦχος
+fame r
+sound 2.
+ECHTHES = CHTHES,
+ECHTHRA ἔχθρα 7.
+enmity 5
+hatred 1.
+ECHTHROS ἐχθρός
+
+enemy 29
+
+BDAPrHUS edagosn. | F
+— ground τ᾿.
+BEDE ἤδη Β
+already 18
+
+by this time x
+τ even DOW 1
+
+now 37
+
+yet 2.
+
+EGCHRIO ἐγχρίω
+EGEIRO ἐγείρω E
+
+ΤῊΣ 1
+ift w
+lift outer E
+raise 28
+raise again 4
+Taise up 23 E
+rear up 1
+take up 1. E
+MID, (PASS.) arise 27
+Tise 36
+rise again 5
+rise up 8 FS
+tstand forth (with eis to
+meson) t.
+
+EGERSIS ἔγερσις 7.
+
+resurrection x.
+
+EGGIZO ἐγγίζω
+approach 2
+be at hand 9
+be nigh 2
+come near καὶ
+come nigh 8
+draw near 5
+draw nigh 12. Α
+
+EGGRAPHO ἐγγράφω
+= write in 2.
+EGGUOS ἔγγνος
+. surety τ. I
+EGGUS ἐγγύς
+atid 6 :
+from x
+near 3
+Bae ἴο 2
+nig!
+nigh ae hand 4 δ
+nigh to 3
+nigh unto 4
+ready τ.
+
+~ Ὲ
+EGKAINIA ἐγκαίνια
+n. pl.
+feast of the dedi- | 5
+7 cation τ.
+EGEKAINIZO ἐγκαινίζω 5:
+consecrate (M.
+make new) 1
+dedicate (M.
+. purify) z.
+EGEKALEO ἐγκαλέω
+aecuse 4
+call in question
+
+1
+implead x.
+flay a thing to the charge
+of (with kata) τ.
+EGKATALEIPO
+ἐγκαταλείπω
+forsake 7
+ἡ leave 2.
+ἘΘΚΛΤΗΕΤΟΒ ἐγνκά-
+θετος
+᾿ spy τ.
+EGKATOIKEO ἐγ-
+κατοικέω
+dwell among r.
+
+EGKENTRIZO éyxev-
+
+graff in 4
+graff into 2.
+EGKLEMA ἔγκλημα n.
+erime laid
+against one τ
+Ἠλὰ to one’s
+
+. charge 1.
+EGKOMBOOMAI ἐγ- |‘
+κομβόομαι 1
+
+be clothed with
+
+1.
+ἙΔΚΟΡΗ͂ ἐγκοπή
+tSee didémi.
+EGEOPTO ἐγκόπτω ᾿:
+| be tedious unto
+
+EGKRATES ἐγκρατής
+3 temperate 1.
+BGKRATEUVOMAL
+2 f
+κρατεύομαι
+mee be re z
+7 can contain 1.
+EGERINO ἐγκρίνω
+make of the
+number r.
+EGKRUPTO ἐγκρύπτω
+hide 2.
+EGKUOS ἔγκυος
+τ great with child
+
+1.
+BGO ἐγώ
+I freq.
+EI εἰ
+if 325
+that
+whether 20,
+| With de mé: else 2, or else
+3. With de mége: else 2,
+if otherwise 2, otherwise
+x, or else 1, etc. With
+kai: else 2, if 3, though
+14, ete,” With mé: but
+53, except 6, except
+that 1, if not 5, more
+than 1, save 16, saving 2,
+save that τ, save only
+that τ. With tis: whether
+any 1, whosoever ὦ, he
+that 2, that which 1.
+Also eombined with various
+other particles,
+
+EIDEA=IDEA.
+EIDO = EIDON =
+OIDA.
+
+EIDOLEION εἰδωλεῖον
+
+nN. .
+idol’s temple x.
+
+EIDOLOLATREIA
+εἰδωλολατρεία 7.
+idolatry 4.
+EIDOLOLATRES εἰδω-
+λολάτρης
+____ idolater 7.
+EIDOLON εἴδωλον n.
+idol x1.
+EIDOLOTHUTON cidw-
+λόθυτον Ἢ.
+meat offered to
+idols 1.
+that. which is
+offered in
+
+sacrifice to
+
+idols 1.
+
+thing offered to
+idols 1
+
+thing offered un-
+to an idol x.
+
+thing offered un-
+to idols τ
+
+thing sacrificed
+unto idols 2
+
+thing that is
+offered in
+sacrifice unto
+idols r
+
+thing which is
+offered toidols
+
+I
+*offered in sacri-
+fice unto idols
+
+1.
+ἘΤΏΟΝ εἶδον. Cf
+HORAO.
+behold 16
+consider x
+know 1
+look 6
+Jook on 2
+perceive s.
+Imper. see 316 [ide and
+idou].
+EIDOS εἶδος
+appearance 1
+fashion 1
+shape 2
+sight x.
+EIGE “ge (εἴ ye)
+a2
+
+EIKO) εἴκω
+give place τ.
+BIKO? εἴκω (ἔοικα)
+__ belike 5.
+BIKON εἰκών f.
+image 23.
+BIKOSI εἴκοσι
+twenty 13.
+BILIKRINEIA εἰλι-
+κρίνεια f.
+sincerity 3.
+
+EILIKRINES εἶλι-
+
+κρινῆς
+pure x
+sincere 1.
+BIMI εἰμί
+
+to be,
+
+Rendered also by become,
+begin to be, be made,
+come 3, come to pass,
+dure, endure, follow,
+have being, hold, is to
+say 6, make, mean 6,
+stand.
+
+agree (with isos) 2; agree
+in (with eis) 1; agree
+not (with asumphonos
+1; be accepted of (wit
+euarest0s) 1; be made
+(with eis) 1; belong
+unto (with ek) 1; fear
+exceedingly (with ek-
+phobos) 1; follow —-
+meta) 1; give self wholly
+to (with en) 1; have
+(with en) 3; have the
+charge of (with cpi) 1;
+live long (2eith makro-
+chronios) 1; lust after
+(with epithumetés) 15
+must needs (7th anagz-
+ké) 1; pases the flower
+of age (with huperak-
+mos) 1; please well
+(with euarestos) x5 pro-
+fit (with Ophelimos) 1;
+quake (with entromos)1;
+sojourn (with paroikos)
+x. With genit. or dat.:
+belong to 2, have 22,
+own i
+
+ΕἾΝΑΙ, Inf. of EIML
+
+EIOTHA. Perf. 9,
+ETHO. ὦ.
+
+EIPER εἴπερ
+if so be z
+if so be that 3
+seeing 1
+though x
+
+RIPON εἶπον
+answer r
+bid 5
+bring wordz
+call x
+command 8
+grant x
+Bay 865
+say on τ
+speak 55
+speak of z
+tell 40
+tell of 1.
+EIPOS εἴπως
+
+if by any means
+
+EIREKA, Perf. of ERO
+
+EIRENE cipivy/.
+peace 88
+quietness 1
+rest x.
+tat one again (eis and ace.)
+1.
+EIRENEUO εἰρηνεύω
+be at peace 1
+have peace r
+live in peace x
+live peaceably τ.
+EIRENIKOS εἰρηνικός
+peaceable 2.
+EIRENOPOIEO εἰρηνο-
+ποιέω
+make peace 1.
+
+EIRENOPOIOS cipnve-
+
+ΝΙΝ...

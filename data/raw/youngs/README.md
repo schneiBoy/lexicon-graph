@@ -1,10 +1,12 @@
 # Young's Analytical Concordance: Greek Index-Lexicon (OCR)
 
-Tesseract 5.3.4 `eng+grc`, 300 dpi, PDF pages 1159-1196 of scan `analyticalconcor0000youn_j4x7` (sha256 in SOURCES.md).
-Raw OCR text only. The 260 MB PDF is not in the repo.
+Scan `analyticalconcor0000youn_j4x7` (sha256 in SOURCES.md), PDF pages 1159-1196. Only the 260 MB PDF stays out of the repo.
 
-Status (first parser pass, `pipeline/ingest/young_index.py`): 1061 entries found; 810 join uniquely to a Strong's lemma;
-only 288 of those have a summed rendering count equal to the tagged-KJV count (`kjv_counts.py`).
-The mismatches are mostly OCR numeral errors (1 read as x/τ/I, 2 as a) and wrapped lines, so these counts are
-candidates only and nothing here enters the graph until the numerals are fixed and the cross-check agrees.
-Verified by hand: AGAPAO 142 = KJV 142; AGAPE 27+1+86+1+1 = 116 = KJV 116.
+- `ocr_columns/<page>_psm6.txt`, `<page>_psm4.txt`: two independent Tesseract 5.3.4 (`eng+grc`, 300 dpi) readings of every page,
+  one column at a time. Whole-page OCR scrambles these 6-column pages (page 1161 was mostly garbage), so each page is split
+  into columns first (`pipeline/ingest/young_columns.py`).
+- `checked/verified.json`: counts that passed every check, the only Young's counts the graph may use.
+- `checked/queue.json`: counts that did NOT pass, with both OCR totals, the KJV total and the reason. Not used.
+- `checked/report.json`: totals from the last run.
+
+Method, results and the audit: `docs/young-method.md`.

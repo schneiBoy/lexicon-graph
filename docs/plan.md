@@ -120,3 +120,7 @@ See the open questions in [`spec.md`](spec.md): verse-to-word mapping and parsin
 - [x] Strong's-tagged KJV chosen; counts for G25 and G26 match Young's
 - [ ] Get a written licence from the owner of `kjv_strongs` and confirm where its tags came from (copy is in `data/raw/kjv/`)
 - [ ] Decide the open questions that touch the source lock
+
+## Young's counts (measured 2026-11-05)
+
+Method and results are in [young-method.md](young-method.md). Only counts where two OCR readings and the tagged-KJV count agree enter the graph (2,236 of the Strong's numbers so far); the rest are queued and not used.
