@@ -10,7 +10,7 @@ The Companion Bible and its appendixes (including App-135) are not a source. The
 | Thayer's Greek-English Lexicon (1889) | [imbennyhim/Every-Promise-Thayers](https://github.com/imbennyhim/Every-Promise-Thayers) (5,521 entries, G1 to G5624, Markdown) | CC0 | Found. Hand-digitised, so transcription artifacts are possible. |
 | Young's Analytical Concordance | Scan on archive.org (`analyticalconcor0000youn_j4x7`), a revised edition with Index-Lexicons at the end; the year is not yet confirmed from the scan. The 260 MB PDF is not in the repo. | Public-domain text | Scan in hand. The built-in text layer reads English well but garbles Greek and some transliterations (it has "agapad" for "agapao"). Pages needed for each lemma are re-read at 300 dpi; a full re-read is about 3 hours. |
 | Bullinger's Critical Lexicon and Concordance to the English and Greek New Testament | [5th ed., 1908 scan on archive.org](https://archive.org/details/Criticallexiconconcordanceenggreeknt.5thed1908), re-read by OCR from the page images: `data/raw/bullinger/ocr/` (1,043 pages) | Public-domain text; the OCR is ours | Done, with OCR errors. The scan's own text layer is unusable. Greek and English read well on the LOVE pages. |
-| KJV text | Not yet chosen | n/a | Open. |
+| KJV text | [mattatanner/kjv_strongs](https://github.com/mattatanner/kjv_strongs): the 1769 KJV with Strong's numbers and tense, voice and mood tags, 31,102 verses, parses cleanly. | No licence stated in the repo. The KJV text and Strong's numbers are public domain, but who made the tags and under what terms is not confirmed. Review before publishing. | Chosen for counts and verse lists. Reproduces Young's counts for G25 and G26 (see below). Replaces `kaiserlik/kjv`, where 14 of 27 NT books failed to parse. |
 
 ## Pinned scans
 
@@ -22,6 +22,17 @@ The page pointers in the graph refer to these exact files. They are not stored i
 | Young's, `analyticalconcor0000youn_j4x7.pdf` (1,256 pages) | `695e2fdd7d110d55ebcd81a7640be764005ba7fb72a101a600912a289396ad6c` |
 | Thayer's, `greekenglishlexi00grimuoft.pdf` (760 pages; Grimm's Wilke's Clavis translated, revised and enlarged by Thayer, **Corrected Edition**, copyright 1886 and 1889, University of Toronto copy) | `fd40321a663287edac24e1f11651aab0249d8db59c714e61a94351f7d8201ef9` |
 | Strong's Exhaustive Concordance, 1890 | Not yet pinned. The scan has been downloaded by the project owner but is too large to upload to the working session. |
+
+## Counts cross-check: Young's against the tagged KJV
+
+Young's Index-Lexicon (PDF page 1159, read from the scan and checked against the page image) and a script count over `kjv_strongs.json` agree for both words.
+
+| Word | Young's | Tagged KJV, raw tags | Tagged KJV, rule applied |
+| --- | --- | --- | --- |
+| ἀγάπη (G26) | love 86, charity 27, feast of charity 1, dear 1, charitably 1 = 116 | 116 | 116 |
+| ἀγαπάω (G25) | love 135, beloved (passive participle) 7 = 142 | 147 | 142 |
+
+For G25 the raw tag count is 147 because the tagger also marked five helper words next to the verb: "doth" (John 10:17), "have" (John 15:9), "which was" (Romans 9:25), "let" (Ephesians 5:33) and "let us" (1 John 3:18). Counting only tags followed by a verb-form (tense, voice, mood) tag gives 142: 135 non-"beloved" plus 7 "beloved", matching Young's exactly. The sample's G26 renderings list "charity (28x)" and "feasts of charity (1x)" together, which counts the feast line twice (Young's has 27 plus 1).
 
 ## Thayer's: the digital copy is not the print text
 
