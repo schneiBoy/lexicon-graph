@@ -6,3 +6,5 @@
 - The scan itself is not in the repo (81 MB). The PDF's built-in text layer is unusable because its Greek recogniser turned English text into Greek-looking noise, which is why the pages were re-read from the images.
 
 OCR text contains errors. Spot checks on the LOVE entry found dropped or misread words (for example "rofane" for "profane", "devotiun" for "devotion", and a skipped phrase). Anything quoted from here is tagged as OCR-derived, and entries that go into the dataset need a check against the page image.
+
+**Update 2026-11-06:** `ocr/` (whole-page) loses the right-hand column of many pages. Use `ocr_columns/` (column OCR at 400 dpi with line boxes) and read `docs/bullinger-method.md` for the measured error rate (about 4 to 7 words in 100).
