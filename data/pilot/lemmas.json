@@ -1,0 +1,278 @@
+{
+ "G26": {
+  "source": {
+   "greek": "ἀγάπη",
+   "transliteration": "agápē",
+   "strongs": {
+    "number": "G26",
+    "derivation": "from G25 (ἀγαπάω);",
+    "definition": " love, i.e. affection or benevolence; specially (plural) a love-feast",
+    "kjv_translations": "(feast of) charity(-ably), dear, love"
+   },
+   "thayers": {
+    "text": "ἀγάπη, (ης, ἡ, a purely Biblical and ecclesiastical word (for Wyttenbach, following Reiske's conjecture, long ago restored ἀγαπήσων in place of ἀγάπης, ὧν in Plutarch, sympos. quaestt. 7, 6, 3 (vol. viii., p. 835, Reiske edition)). Secular authors from (Aristotle), Plutarch on used ἀγάπησις. \"The Sept. use ἀγάπη for אַהֲבָה, Son 2:4-5; Son 2:7; Son 3:5; Son 3:10; Son 5:8; Son 7:6; Son 8:4; Son 8:6-7; (\"It is noticeable that the word first makes its appearance as a current term in the Song of Solomon; — certainly no undesigned evidence respecting the idea which the Alexandrian LXX translators had of the love in this Song\" (Zezschwitz, Profangraec. u. Biblical Sprachgeist, p. 63)); Jer 2:2; Ecc 9:1; Ecc 9:6; (2Sa 13:15). It occurs besides in Wis 3:9 Wis 6:19. In Philo and Josephus, I do not remember to have met with it. Nor is it found in the N. T. in Acts, Mark, or James; it occurs only once in Matthew and Luke, twice in Hebrews and Revelation, but frequently in the writings of Paul, John, Peter, Jude\" (Bretschn. Lex. under the word); (Philo, deus immut. § 14). In signification it follows the verb ἀγαπάω; consequently it denotes 1. affection, good-will, love, benevolence: Joh 15:13; Rom 13:10; 1Jn 4:18. Of the love of men to men; especially of that love of Christians toward Christians which is enjoined and prompted by their religion, whether the love be viewed as in the soul or as expressed: Mat 24:12; 1Co 13:1-4; 1Co 13:8; 1Co 14:1; 2Co 2:4; Gal 5:6; Phm 1:5; Phm 1:7; 1Ti 1:5; Heb 6:10; Heb 10:24; Joh 13:35; 1Jn 4:7; Rev 2:4; Rev 2:19, etc. Of the love of men toward god: ἡ ἀγάπη τοῦ Θεοῦ; (obj. genitive (Winer's grammar, 185 (175))), Luk 11:42; Joh 5:42; 1Jn 2:15 (τοῦ πατρός);. Of the love of god toward men: Rom 5:8; Rom 8:39; 2Co 13:13 (14). Of the love of god toward Christ: Joh 15:10; Joh 17:26. Of the love of Christ toward men: Joh 15:9; 2Co 5:14; Rom 8:35; Eph 3:19. In construction: ἀγάπην εἰς τινα, 2Co 2:8 (?); Eph 1:15 (L",
+    "edition": "digital, normalised; not checked against the print scan",
+    "truncated": true,
+    "words_in_entry": 828
+   },
+   "bullinger": {
+    "critical_lexicon_text": "LOVE [noun.] ἀγάπη, love. [A word not found in the profane writers, nor in Philo and Josephus, nor in Acts, Mark, and James. It is unknown to writers outside of the N.T. φιλανθρωπία, philanthropy was the highest word used by the Greeks, which is a very different thing to ἀγάπη, and even far lower than φιλαδελφία. φιλανθρωπία in its full display was only giving to him who was entitled to it his full rights.] ἀγάπη denotes the love which springs from admiration and veneration, and which chooses its object with decision of will, and devotes a self-denying and compassionate devotion to it. Love in its fullest conceivable form.",
+    "proofread_against_page_image": true,
+    "where": [
+     {
+      "page": 474,
+      "column": 1,
+      "first_line": 0,
+      "last_line": 18
+     }
+    ],
+    "note": "LOVE [noun.] entry, ἀγάπη"
+   },
+   "kjv": {
+    "count_in_nt_tagged_kjv": 116
+   }
+  }
+ },
+ "G25": {
+  "source": {
+   "greek": "ἀγαπάω",
+   "transliteration": "agapáō",
+   "strongs": {
+    "number": "G25",
+    "derivation": "perhaps from (much) (or compare G5689);",
+    "definition": " to love (in a social or moral sense)",
+    "kjv_translations": "(be-)love(-ed)"
+   },
+   "thayers": {
+    "text": "ἀγαπάω, (ῶ; (imperfect ἠγάπων); future ἀγαπήσω; 1 aorist ἠγάπησα; perfect active (1 person plural ἠγαπήκαμεν, 1Jn 4:10 WH text), participle ἠγαπηκῶς (2Ti 4:8); passive (present ἀγαπῶμαι); perfect participle ἠγαπημένος; 1 future ἀγαπηθήσομαι; (akin to ἄγαμαι (Fick, Part 4:12; see ἀγαθός, at the beginning)); to love, to be full of good-will and exhibit the same: Luk 7:47; 1Jn 4:7 f; with the accusative of the person, to have a preference for, wish well to, regard the welfare of: Mat 5:43 ff; Mat 19:19; Luk 7:5; Joh 11:5; Rom 13:8; 2Co 11:11; 2Co 12:15; Gal 5:14; Eph 5:25; Eph 5:28; 1Pe 1:22, and elsewhere; used often in the First Epistle of John of the love of Christians toward one another; of the benevolence which god, in providing salvation for men, has exhibited by sending his Son to them and giving him up to death, Joh 3:16; Rom 8:37; 2Th 2:16; 1Jn 4:11; 1Jn 4:19; (noteworthy is Jud 1:1 L T Tr WH τοῖς ἐν Θεῷ πατρί ἠγαπημένοις; see ἐν, I. 4, and cf. Lightfoot on Col 3:12); of the love which led Christ, in procuring human salvation, to undergo sufferings and death, Gal 2:20; Eph 5:2; of the love with which god regards Christ, Joh 3:35; (v. L marginal reading);; Eph 1:6. When used of love to a master, god or Christ, the word involves the idea of affectionate reverence, prompt obedience, grateful recognition of benefits received: Mat 6:24; Mat 22:37; Rom 8:28; 1Co 2:9; 1Co 8:3; Jas 1:12; 1Pe 1:8; 1Jn 4:10; 1Jn 4:20, and elsewhere. With an accusative of the thing ἀγαπάω denotes \"to take pleasure in the thing, prize it above other things, be unwilling to abandon it or do without it\": δικαιοσύνην, Heb 1:9 (i. e. steadfastly to cleave to); τήν δόξαν, Joh 12:43; τήν πρωτοκαθεδρίαν, Luk 11:43; τό σκότος; and τό φῶς, Joh 3:19; τόν κόσμον. 1Jn 2:15; τόν νῦν αἰῶνα, 2Ti 4:10, — both which last phrases signify to set the heart on earthly advantages and joys; τήν ψυχήν αὐτῶν, Rev 12:11; ζωήν, 1Pe 3:10 (to derive pleasure from life, render it agreeable to himself); to",
+    "edition": "digital, normalised; not checked against the print scan",
+    "truncated": true,
+    "words_in_entry": 503
+   },
+   "bullinger": {
+    "critical_lexicon_text": "LOVE (-ED, -EDST, -EST, -ETH.) [verb.] 1. ἀγαπάω, to regard, (Lat., diligere) esteem, (the principle of internal feeling of delectation and kindli-ness,) to acquiesce with satisfaction, to cherish with reverence, to love, considered in reference to the tendency of the will (elsewhere translated beloved.) (See note, below.) [NOTE.—These two words are not used indiscriminately. ἀγαπάω, never means to kiss; φιλέω, never means to acquiesce or cherish with reverence. φιλέω denotes the sense or passion of love, but in ἀγαπάω is implied the cause of φιλέω. ἀγαπάω is to make much of a thing, to admire for some good and sufficient reason, but φιλέω denotes the love which springs naturally from the thing loved, even where no just cause of love exists. ἀγαπάω is never used of an improper love; φιλέω is. Hence, in the N.T. φιλέω is never used of man's love to God, but ἀγαπάω, always. Both words are used of God’s love to man, ἀγαπάω, when He is said to “Love the world,” (John iii. 16, etc ) and when He wishes men good, and seeks their salvation ; and φιλέω is affirmed of His love to His people who please Him, (John xvi. 27, etc.) Again, φιλέω is used of Jesus’ love for Lazarus, (John xi. 3, 36); but in verse 5 the word is ἀγαπάω, because there the sisters are included, and therefore this word was more correct. Again, we are commanded to love our enemies, etc., but here ἀγαπάω is used, never φιλέω ; love cannot be required in this case, though kindness and compassion are. Again, in John xxi. 15-17, in the first question Jesus uses ἀγαπάω, but Peter uses the word φιλέω in his reply; this is repeated, and then Jesus uses Peter's word in the third question. Once more, to love (φιλέω) life, from an excessive desire to preserve it, and so to lose sight of the real object of living, is reproved by our Lord, (John xii. 25.) Whereas to love (ἀγαπάω) life, is to consult its real interest. Other examples may be traced out with much profit, e.g. Mark x. 21.]",
+    "proofread_against_page_image": true,
+    "where": [
+     {
+      "page": 474,
+      "column": 1,
+      "first_line": 49,
+      "last_line": 58
+     },
+     {
+      "page": 475,
+      "column": 0,
+      "first_line": 9,
+      "last_line": 54
+     },
+     {
+      "page": 475,
+      "column": 1,
+      "first_line": 0,
+      "last_line": 3
+     }
+    ],
+    "note": "LOVE [verb.] No. 1 ἀγαπάω, with the shared NOTE on ἀγαπάω and φιλέω"
+   },
+   "youngs": {
+    "count_in_nt": 142,
+    "verified": "two OCR readings and the tagged KJV agree"
+   },
+   "kjv": {
+    "count_in_nt_tagged_kjv": 142
+   }
+  }
+ },
+ "G5368": {
+  "source": {
+   "greek": "φιλέω",
+   "transliteration": "philéō",
+   "strongs": {
+    "number": "G5368",
+    "derivation": "from G5384 (φίλος);",
+    "definition": " to be a friend to (fond of (an individual or an object)), i.e. have affection for (denoting personal attachment, as a matter of sentiment or feeling; while G25 (ἀγαπάω) is wider, embracing especially the judgment and the deliberate assent of the will as a matter of principle, duty and propriety: the two thus stand related very much as G2309 (θέλω) and G1014 (βούλομαι), or as G2372 (θυμός) and G3563 (νοῦς) respectively; the former being chiefly of the heart and the latter of the head); specially, to kiss (as a mark of tenderness)",
+    "kjv_translations": "kiss, love"
+   },
+   "thayers": {
+    "text": "φιλέω, φιλῶ; imperfect 3 person singular ἐφίλει; 1 aorist ἐφίλησα; perfect πεφίληκα; (φίλος); from Homer down; 1. to love; to be friendly to one (the Sept. several times for אָהַב): τινα, Mat 10:37; Joh 5:20 (here L marginal reading ἀγαπᾷ);; 1Co 16:22; Rev 3:19; with ἐν πίστει added, with a love founded in and springing from faith, Tit 3:15; τί, to love i. e. delight in, long for, a thing: τήν πρωτοκλισίαν, Mat 23:6; ἀσπασμούς, Luk 20:46; τήν ψυχήν, to be desirous of preserving one's life (opposed to μισεῖν, to hate it when it cannot be kept without denying Christ), Joh 12:25; with nouns denoting virtues or vices: τό ψεῦδος, Rev 22:15 (σοφίαν, Pro 29:3; Pro 8:17); followed by an infinitive, like the Latinamo facere, to love to do, i. e. to do with pleasure: Mat 6:5 (Isa 56:10; Pindar Nem. 1,15; Aeschylus septem 619; Agam. 763; Suppl. 769; Euripides, Iph. Taur. 1198; Rhes. 394; Xenophon, hipparch. 7, 9; Aelian v. h. 14, 37). 2. to kiss: τινα, Mat 26:48; Mar 14:44; Luk 22:47 (often in the Greek writings; the Sept. for נָשַׁק, Gen 27:26 f, and often). 3. As to the distinction between ἀγαπᾶν and φιλεῖν: the former, by virtue of its connection with ἄγαμαι, properly denotes a love founded in admiration, veneration, esteem, like the Latindiligere, to be kindly disposed to one, wish one well; but φιλεῖν denotes an inclination prompted by sense and emotion, Latinamare; ὁ μή τοῦ δεόμενος οὐδέ τί ἀγαπωη ἄν. ὁ δέ μή ἀγαπωη (ἀγαπῶν (?)), ὀυδ' ἄν φίλοι, Plato, Lysias, p. 215 b.; ἐφιλησατε αὐτόν (Julius Caesar) ὡς πατέρα καί ἠγαπησατε ὡς εὐεργέτην, Dio Cassius, 44, 48; ut scires, eum a me non diligt solum, verum etiam amari, Cicero, ad fam. 13, 47; L. Clodius valde me diligit vel, ut ἐμφατικωτερον dicam, valde me amat, id. ad Brut. 1. Hence, men are said ἀγαπᾶν God, not φιλεῖν; and God is said ἀγαπῆσαι τόν κόσμον (Joh 3:16), and φιλεῖν the disciples of Christ (Joh 16:27); Christ bids us ἀγαπᾶν (not φιλεῖν) τούς ἐχθρούς (Mat 5:44), because love as an emotion cannot be commanded, but",
+    "edition": "digital, normalised; not checked against the print scan",
+    "truncated": true,
+    "words_in_entry": 548
+   },
+   "bullinger": {
+    "critical_lexicon_text": "2. φιλέω, to kiss, to love (Lat., amare), used of the more direct demonstration of regard; (hence, φίλος, a friend, is from φιλέω, from φίω, or from πίλω, to press; φίλος, is he whom we embrace, or kiss. Again, φιλία is friendship between men, but love when between the sexes,) to love, considered in reference to a natural inclination, or an emotion, (i.e. the passion of love) (elsewhere translated to kiss.) (See note, below.) [NOTE.—These two words are not used indiscriminately. ἀγαπάω, never means to kiss; φιλέω, never means to acquiesce or cherish with reverence. φιλέω denotes the sense or passion of love, but in ἀγαπάω is implied the cause of φιλέω. ἀγαπάω is to make much of a thing, to admire for some good and sufficient reason, but φιλέω denotes the love which springs naturally from the thing loved, even where no just cause of love exists. ἀγαπάω is never used of an improper love; φιλέω is. Hence, in the N.T. φιλέω is never used of man's love to God, but ἀγαπάω, always. Both words are used of God’s love to man, ἀγαπάω, when He is said to “Love the world,” (John iii. 16, etc ) and when He wishes men good, and seeks their salvation ; and φιλέω is affirmed of His love to His people who please Him, (John xvi. 27, etc.) Again, φιλέω is used of Jesus’ love for Lazarus, (John xi. 3, 36); but in verse 5 the word is ἀγαπάω, because there the sisters are included, and therefore this word was more correct. Again, we are commanded to love our enemies, etc., but here ἀγαπάω is used, never φιλέω ; love cannot be required in this case, though kindness and compassion are. Again, in John xxi. 15-17, in the first question Jesus uses ἀγαπάω, but Peter uses the word φιλέω in his reply; this is repeated, and then Jesus uses Peter's word in the third question. Once more, to love (φιλέω) life, from an excessive desire to preserve it, and so to lose sight of the real object of living, is reproved by our Lord, (John xii. 25.) Whereas to love (ἀγαπάω) life, is to consult its real interest. Other examples may be traced out with much profit, e.g. Mark x. 21.]",
+    "proofread_against_page_image": true,
+    "where": [
+     {
+      "page": 474,
+      "column": 1,
+      "first_line": 59,
+      "last_line": 62
+     },
+     {
+      "page": 475,
+      "column": 0,
+      "first_line": 0,
+      "last_line": 8
+     },
+     {
+      "page": 475,
+      "column": 0,
+      "first_line": 9,
+      "last_line": 54
+     },
+     {
+      "page": 475,
+      "column": 1,
+      "first_line": 0,
+      "last_line": 3
+     }
+    ],
+    "note": "LOVE [verb.] No. 2 φιλέω, with the shared NOTE"
+   },
+   "youngs": {
+    "count_in_nt": 25,
+    "verified": "two OCR readings and the tagged KJV agree"
+   },
+   "kjv": {
+    "count_in_nt_tagged_kjv": 25
+   }
+  }
+ },
+ "G4102": {
+  "source": {
+   "greek": "πίστις",
+   "transliteration": "pístis",
+   "strongs": {
+    "number": "G4102",
+    "derivation": "from G3982 (πείθω);",
+    "definition": " persuasion, i.e. credence; moral conviction (of religious truth, or the truthfulness of God or a religious teacher), especially reliance upon Christ for salvation; abstractly, constancy in such profession; by extension, the system of religious (Gospel) truth itself",
+    "kjv_translations": "assurance, belief, believe, faith, fidelity"
+   },
+   "thayers": {
+    "text": "πίστις, πίστεως, ἡ (πείθω (which see)), from (Hesiod, Theognis, Pindar), Aeschylus, Herodotus down; the Sept. for אֱמוּנָה, several times for אֱמֶת and אֲמָנָה; faith; i. e.: 1. conviction of the truth of anything, belief (Plato, Polybius, Josephus, Plutarch; θαυμάσια καί μείζω πίστεως, Diodorus 1, 86); in the N. T. of a conviction or belief respecting man's relationship to God and divine things, generally with the included idea of trust and holy fervor born of faith and conjoined with it: Heb 11:1 (where πίστις is called ἐλπιζομένων ὑπόστασις, πραγμάτων ἔλεγχος οὐ βλεπομένων); opposed to εἶδος, 2Co 5:7; joined with ἀγάπη and ἐλπίς, 1Co 13:13. a. when it relates to God, πίστις is \"the conviction that God exists and is the creator and ruler of all things, the provider and bestower of eternal salvation through Christ\": Heb 11:6; Heb 12:2; Heb 13:7; πίστις ἐπί Θεόν, Heb 6:1; ἡ πίστις ὑμῶν ἡ πρός τόν Θεόν, by which ye turned to God, 1Th 1:8; τήν πίστιν ὑμῶν καί ἐλπίδα εἰς Θεόν, directed unto God, 1Pe 1:21; with a genitive of the object (faith in) (τῶν θεῶν, Euripides, Med. 414; τοῦ Θεοῦ, Josephus, contra Apion 2, 16, 5; cf. Grimm, Exgt. Hdbch. on Sap. vi., 17f, p. 132; (cf. Meyer on Rom 3:22; also Meyer, Ellicott, Lightfoot on Col. as below; Winer's Grammar, 186 (175))): ἡ πίστις τῆς ἐνεργείας τοῦ Θεοῦ τοῦ ἐγείραντος αὐτόν (Christ) ἐκ τῶν νεκρῶν, Col 2:12; διά πίστεως, by the help of faith, Heb 11:33; Heb 11:39; κατά πίστιν, equivalent to πιστεύοντες, Heb 11:13; πίστει, dative of means or of mode by faith or by believing, prompted, actuated, by faith, Hebrews 11:3f, 7-9, 17, 20-24, 27-29, 31; dative of cause, because of faith, Heb 11:5; Heb 11:11; Heb 11:30. b. in reference to Christ, it denotes \"a strong and welcome conviction or belief that Jesus is the Messiah, through whom we obtain eternal salvation in the kingdom of God\" (on this see more at length in πιστεύω, 1 b. γ.); α. universally: with the genitive of the object (see above, in a.), Ἰησοῦ Χριστοῦ, Rom 3:22; Gal 2:16; Gal 3:22; Eph",
+    "edition": "digital, normalised; not checked against the print scan",
+    "truncated": true,
+    "words_in_entry": 1737
+   },
+   "bullinger": {
+    "critical_lexicon_text": "πίστις, the trust which I entertain or put in a person or thing, the persuasion which I have, the conviction which I cherish. It implies a conviction which is based upon trust, not upon knowledge, (see under “FAITH.”)",
+    "proofread_against_page_image": true,
+    "where": [
+     {
+      "page": 100,
+      "column": 0,
+      "first_line": 37,
+      "last_line": 42
+     }
+    ],
+    "note": "BELIEF, πίστις"
+   },
+   "kjv": {
+    "count_in_nt_tagged_kjv": 244
+   }
+  }
+ },
+ "G4100": {
+  "source": {
+   "greek": "πιστεύω",
+   "transliteration": "pisteúō",
+   "strongs": {
+    "number": "G4100",
+    "derivation": "from G4102 (πίστις);",
+    "definition": " to have faith (in, upon, or with respect to, a person or thing), i.e. credit; by implication, to entrust (especially one's spiritual well-being to Christ)",
+    "kjv_translations": "believe(-r), commit (to trust), put in trust with"
+   },
+   "thayers": {
+    "text": "πιστεύω; imperfect ἐπίστευον; future πιστεύσω; 1 aorist ἐπίστευσα; perfect πεπίστευκα; pluperfect (without augment, cf. Winers Grammar, § 12, 9; (Buttmann, 33 (29))) πεπιστεύκειν (Act 14:23); passive perfect πεπίστευμαι; 1 aorist ἐπιστεύθην; (πιστός); the Sept. for הֶאֱמִין; in classical Greek from Aeschyl, Sophocles, Euripides, Thucydides down; to believe, i. e. 1. intransitive, to think to be true; to be persuaded of; to credit, place confidence in; a. universally: the thing believed being evident from the preceding context, Mat 24:23,(26); Mar 13:21; 1Co 11:18; with an accusative of the thing, Act 13:41 (L T Tr WH ὁ for Rec. ᾧ), to credit, have confidence, followed by ὅτι, Act 9:26; τίνι, to believe one's words, Mar 16:13; 1Jn 4:1; τίνι ὅτι, Joh 4:21; τῷ ψεύδει, 2Th 2:11; περί τίνος, ὅτι, Joh 9:18. b. specifically, in a moral and religious reference, πιστεύειν is used in the N. T. of \"the conviction and trust to which a man is impelled by a certain inner and higher prerogative and law of his soul\"; thus it stands α. absolutely to trust in Jesus or in God as able to aid either in obtaining or in doing something: Mat 8:13; Mat 21:22; Mar 5:36; Mar 9:23; Luk 8:50; Joh 11:40; followed by ὅτι, Mat 9:28; Mar 11:23; (Heb 11:6); τῷ λόγῳ, ᾧ (ὅν) εἶπεν ὁ Ἰησοῦς, Joh 4:50. β. of the credence given to God's messengers and their words, with a dative of the person or thing: Μωϋσεῖ Joh 5:46. to the prophets, Joh 12:38; Act 24:14; Act 26:27; Rom 10:16; ἐπί πᾶσιν οἷς ἐλάλησαν οἱ προφῆται, to place reliance on etc. Luk 24:25. to an angel, Luk 1:20; followed by ὅτι, Luk 1:45. to John the Baptist, Mat 21:25 (26),32; Mar 11:31; Luk 20:5. to Christ's words, Joh 3:12; Joh 5:38; Joh 5:46; Joh 6:30; Joh 8:45; Joh 10:1-42 :(37),38{a}; τοῖς ἔργοις of Christ, Joh 10:38{b}. to the teachings of evangelists and apostles, Act 8:12; τῇ ἀλήθεια, 2Th 2:12; ἐπιστεύθη τό μαρτύριον, the testimony was believed, 2Th 1:10 (cf. Winers Grammar, § 39,1 a.; Buttmann, 175 (152)); τῇ γραφή, Joh 2:22. ἐν τῷ εὐαγγελίῳ, to put faith",
+    "edition": "digital, normalised; not checked against the print scan",
+    "truncated": true,
+    "words_in_entry": 1681
+   },
+   "bullinger": {
+    "critical_lexicon_text": "(-ED, -EST, -ETH, -ING.) 1. πιστεύω, be persuaded, to rely upon, to trust; (not used in the Classics religiously, but νομίζω.) The N.T. conception of faith is (i) c fully convinced acknowledgment, (ii) a self-surrende ing fellowship, (iii) a fully assured and unswerving confidence. (a) with εἰς, unto or into, implying direction towards the object of faith, to give one’s self up to. (b) with ἐν, in referring to the foundation of the faith, put confidence in. (c) with ἐπί, upon, implying repose, rest and reliance, or with a view",
+    "proofread_against_page_image": true,
+    "where": [
+     {
+      "page": 100,
+      "column": 0,
+      "first_line": 45,
+      "last_line": 59
+     }
+    ],
+    "note": "BELIEVE No. 1 πιστεύω; entry continues past this line (print damaged in \"surrende ing\", do not quote it)"
+   },
+   "kjv": {
+    "count_in_nt_tagged_kjv": 248
+   }
+  }
+ },
+ "G5485": {
+  "source": {
+   "greek": "χάρις",
+   "transliteration": "cháris",
+   "strongs": {
+    "number": "G5485",
+    "derivation": "from G5463 (χαίρω);",
+    "definition": " graciousness (as gratifying), of manner or act (abstract or concrete; literal, figurative or spiritual; especially the divine influence upon the heart, and its reflection in the life; including gratitude)",
+    "kjv_translations": "acceptable, benefit, favour, gift, grace(- ious), joy, liberality, pleasure, thank(-s, -worthy)"
+   },
+   "thayers": {
+    "text": "χάρις, χάριτος, accusative χάριν, and twice in L T Tr WH the rarer form χάριτα (Act 24:27; Jud 1:4) which is also poetic (cf. Alexander Buttmann (1873) Ausf. Spr. i. § 44 Anm. 1; (WHs Appendix, 157{b}; Buttmann, 13 (12))), accusative plural χάριτας (Act 24:27 R G), ἡ (χαίρω), from Homer down, Hebrew חֵן, grace; i. e. 1. properly, that which affords joy, pleasure, delight, sweetness, charm, loveliness: grace of speech (Ecc 10:12; Sir 21:16 Sir 37:21; Homer, Odyssey 8, 175; τῶν λόγων, Demosthenes, 51, 9; 1419, 16; χάριτες μωρῶν, verbal pleasantries which the foolish affect in order to ingratiate themselves, Sir 20:13), λόγοι χάριτος (genitive of quality), Luk 4:22; χάριν διδόναι τοῖς ἀκούουσιν, Eph 4:29; ἐν χάριτι, with grace (the substantive, ἅλας being added; see Lightfoot), Col 4:6. 2. good-will, loving-kindness, favor: in a broad sense, χάρις παρά τίνι, Luk 2:52; ἔχειν χάριν πρός τινα, to have favor with one, Act 2:47; χάρις ἐναντίον τινας, Act 7:10; (χάριν κατά τίνος αἴτεσθαι ὅπως (which see II. 2), Act 25:3 (but others refer this to 3 b. below)); χάρις (of God) ἐστιν ἐπί τινα, attends and assists one, Luk 2:40; Act 4:33; χάριν (χάριτα) χάριτας κατατίθεσθαι τίνι (see κατατίθημι), Act 24:27; Act 25:9; favor (i. e. act of favoring (cf. Winer's Grammar, § 66 at the end)), 2Co 8:4. χάρις is used of the kindness of a master toward his inferiors or servants, and so especially of God toward men: εὑρίσκειν χάριν παρά τῷ Θεῷ, Luk 1:30; ἐνώπιον τοῦ Θεοῦ, Act 7:46; τοῦτο χάρις ἐστιν, this wins for us (God's) favor (R. V. is acceptable), 1Pe 2:19; with παρά Θεῷ added, 1Pe 2:20; παραδεδομένοι τῇ χάριτι τοῦ Θεοῦ, to be committed or commended to the protecting and helping favor of God, Act 14:26; Act 15:40. The apostles and N. T. writers at the beginning and end of their Epistles crave for their readers the favor (`grace') of God or of Christ, to which all blessings, especially spiritual, are due: Rom 1:7; Rom 16:20; Rom 16:24 (R G); 1Co 1:3; 1Co 16:23; 2Co 1:2; 2Co 13:13 (14); Gal 1:3; Gal 6:18; Eph",
+    "edition": "digital, normalised; not checked against the print scan",
+    "truncated": true,
+    "words_in_entry": 1297
+   },
+   "bullinger": {
+    "critical_lexicon_text": "1 χάρις, a kind, affectionate, pleasing nature and inclining disposition, either in person or thing. -Objectively it denotes, personal gracefulness, a pleasing work, beauty of speech, etc. Subjectively it means an inclining towards, courteous or gracious disposition, friendly willingness; on the part of the giver of a favour,, kindness, favour ; on the part of the receiver, thanks. [The word denotes specially, God's grace and favour manifested towards mankind or to any individual, which, as a free act is no more hindered by sin than it is conditional upon works. It is the grace of God, because it denotes the relation assumed and maintained by God towards sinful man. It is joined with Christ, because it is manifested in and through Him. ] 2. εὐπρέπεια, beauty, gracefulness, (of outward appearance,) comeliness, (non occ.)",
+    "proofread_against_page_image": true,
+    "where": [
+     {
+      "page": 346,
+      "column": 0,
+      "first_line": 1,
+      "last_line": 25
+     }
+    ],
+    "note": "GRACE No. 1 χάρις and No. 2 εὐπρέπεια"
+   },
+   "kjv": {
+    "count_in_nt_tagged_kjv": 156
+   }
+  }
+ },
+ "G1343": {
+  "source": {
+   "greek": "δικαιοσύνη",
+   "transliteration": "dikaiosýnē",
+   "strongs": {
+    "number": "G1343",
+    "derivation": "from G1342 (δίκαιος);",
+    "definition": " equity (of character or act); specially (Christian) justification",
+    "kjv_translations": "righteousness"
+   },
+   "thayers": {
+    "text": "δικαιοσύνη, δικαιοσύνης, ἡ (δίκαιος); most frequently in the Sept. for צֶדֶק and צְדָקָה, rarely for חֶסֶד; \"the virtue or quality or state of one who is δίκαιος;\" 1. in the broad sense, the state of him who is such as he ought to be, righteousness (German Rechtbeschaffenheit); the condition acceptable to God (German Gottwohlgefalligkeit); a. universally: λόγος τῆς δικαιοσύνης (like λόγος τῆς καταλλαγῆς, λόγος τοῦ σταυροῦ), the doctrine concerning the way in which man may attain to a state approved of God, Heb 5:13; βασιλεύς δικαιοσύνης, the king who himself has the approbation of God, and who renders his subjects acceptable to God, Heb 7:2; cf. Bleek at the passage b. \"integrity, virtue, purity of life, uprightness, correctness in thinking, feeling, and acting: Mat 3:15; Mat 5:6; Mat 5:10; Mat 5:20; Mat 6:1 G L T Tr, WH; Act 13:10; Act 24:25; Rom 6:13; Rom 6:16; Rom 6:18-20 (opposed to ἁμαρτία, ἀνομία, and ἀκαθαρσία); Rom 8:10 (opposed to ἁμαρτία); Rom 14:17 (? (see c.)); 2Co 6:7; 2Co 6:14 (opposed to ἀνομία, as in Xenophon, mem. 1, 2, 24); 2Co 11:15; Eph 5:9; Eph 6:14; Php 1:11; 1Ti 6:11; 2Ti 2:22; 2Ti 3:16; 2Ti 4:8; Tit 3:5; Heb 1:9; Heb 12:11; Jas 3:18; 1Pe 3:14; 2Pe 2:5; 2Pe 2:21; 2Pe 3:13, and very often in the O. T.; ἐν ὁδῷ δικαιοσύνης, walking in the way of righteousness equivalent to an upright, righteous, man, Mat 21:32; τοῦ Θεοῦ, the righteousness which God demands, Mat 6:33; Jas 1:20; of righteousness which manifests itself in \"beneficence: 2Co 9:9 f (cf. Tob 14:11; Gesenius, Thesaurus iii., p. 1151; so Chaldean צִדְקָה, Dan 4:24, and in the Talmud and rabbinical writings (Buxtorf. col. 1891 (p. 941, Fischer edition); cf. Winer's Grammar, 32)); where δίκαιος καί ὁσιότης are connected — Luk 1:75; Eph 4:24, (Wis 9:3; Clement of Rome, 1 Cor. 48, 4 [ET] and occasionally in secular writings) — the former denotes right conduct toward men, the latter piety toward God (cf. Plato, Gorgias, p. 507 b.; Grimm on Sap., p. 181f; (cf. Trench, § 88, p. 328f; for additional examples see Wetstein (1752) on Ephesians,",
+    "edition": "digital, normalised; not checked against the print scan",
+    "truncated": true,
+    "words_in_entry": 1176
+   },
+   "bullinger": {
+    "critical_lexicon_text": "1. δικαιοσύνη, the doing or being what is just and right; the character and acts of a man commanded by and approved of God, in virtue of which the man corresponds with Him and His will as His ideal and His standard ; it signifies the sum total of all that God commands and approves. As such it is not only what God demands, but what He gives to man, and which is appropriated by faith ; and hence it is a state called forth by God's act of justification, viz. by judicial deliverance from all that stands in the way of being δικαιος, (see “ RIGHTEOUS.”)",
+    "proofread_against_page_image": true,
+    "where": [
+     {
+      "page": 655,
+      "column": 0,
+      "first_line": 1,
+      "last_line": 17
+     }
+    ],
+    "note": "RIGHTEOUSNESS No. 1 δικαιοσύνη"
+   },
+   "kjv": {
+    "count_in_nt_tagged_kjv": 92
+   }
+  }
+ }
+}

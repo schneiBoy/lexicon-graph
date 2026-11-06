@@ -49,3 +49,12 @@ If a model is slow or fails to load, it may not fit in 8 GB with the context win
 5. a `pricing.json` with real prices (copy `pricing.example.json`; prices are blank on purpose)
 
 Every call is estimated at a deliberately high token count before it is sent, skipped if it could exceed the cap, and logged to `pilot_out/cost_ledger.jsonl` afterward. This bills your API account, not your Claude subscription.
+
+## Running on the real source texts (no summaries)
+
+```
+python pipeline/pilot/pilot.py --lemmas data/pilot/lemmas.json --models qwen3.5:9b llama3.1:8b --out pilot_out_real
+```
+
+`data/pilot/lemmas.json` is built by `build_sources.py` from Strong's, Thayer's (digital, cut at 350 words), proofread Bullinger units, Young's verified counts and the tagged-KJV counts. There is no gold answer and no control row; the checks are the same (quotes must be verbatim, no invented numbers or words).
+Lemmas so far: G26, G25, G5368, G4102, G4100, G5485, G1343.

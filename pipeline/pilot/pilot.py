@@ -231,10 +231,11 @@ def write_report(out, rows, control, projection_n):
             f"{sum(len(r['final']['flags']) for r in rs) / n:.1f} | "
             f"{sum(r['output_tokens'] for r in rs)} | {sum(r['prompt_tokens'] for r in rs)} | "
             f"{sum(r['seconds'] for r in rs):.0f} | {sum(r['output_tokens'] for r in rs) / gen:.1f} |")
-    lines += ["", f"Control (the sample's own fields, text checks only): {control['problems']} items "
-              f"across {control['n']} lemmas are not in the five sources. This is how much of the "
-              "sample goes beyond its sources; the models should score at or near 0.", "",
-              "Fails are retried; flags list statement words that are not in the statement's own quote (padding).", "",
+    if control:
+        lines += ["", f"Control (the sample's own fields, text checks only): {control['problems']} items "
+                  f"across {control['n']} lemmas are not in the five sources. This is how much of the "
+                  "sample goes beyond its sources; the models should score at or near 0."]
+    lines += ["", "Fails are retried; flags list statement words that are not in the statement's own quote (padding).", "",
               f"## Projection to {projection_n} lemmas (local drafting)", ""]
     for model, rs in rows.items():
         per = sum(r["seconds"] for r in rs) / len(rs)
@@ -255,6 +256,8 @@ def write_report(out, rows, control, projection_n):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--sample", default=str(DEFAULT_SAMPLE))
+    ap.add_argument("--lemmas", default=None,
+                    help="source records built by build_sources.py from the real texts (no gold, no control row); replaces --sample")
     ap.add_argument("--models", nargs="+", required=True, help="Ollama model tags to compare")
     ap.add_argument("--host", default="http://localhost:11434")
     ap.add_argument("--num-ctx", type=int, default=8192,
@@ -271,7 +274,11 @@ def main():
     ap.add_argument("--confirm-spend", action="store_true")
     args = ap.parse_args()
 
-    lemmas = load_lemmas(args.sample)
+    if args.lemmas:
+        lemmas = {k: {"source": drop_companion(v["source"]), "gold": None}
+                  for k, v in json.loads(Path(args.lemmas).read_text(encoding="utf-8")).items()}
+    else:
+        lemmas = load_lemmas(args.sample)
     names = list(lemmas)
     if len(names) < 2:
         sys.exit("Need at least two lemmas for leave-one-out drafting.")
@@ -299,6 +306,9 @@ def main():
     control = {"n": len(names), "problems": 0}
     for name in names:
         g = lemmas[name]["gold"]
+        if g is None:
+            control = None
+            break
         blob = "\n".join([g["etymology_note"], g["distinctions"], *g["key_theological_notes"],
                           *[c["summary"] + " " + " ".join(c["strongs"]) for c in g["semantic_contrasts"]]])
         control["problems"] += len(check_text(blob, lemmas[name]["source"]))

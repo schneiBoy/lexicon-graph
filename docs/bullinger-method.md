@@ -32,3 +32,10 @@ Bullinger's OCR carries roughly **4 to 7 errors per hundred words**, and neither
 - `pipeline/ingest/bullinger_vocab.py`, `bullinger_flags.py`: the vocabulary check.
 - `pipeline/ingest/gold/bullinger_love_noun.txt`: hand-corrected LOVE (noun) paragraph used for the measurements above.
 - `data/raw/bullinger/ocr_columns/`: column OCR of the 30 pages around the candidate pilot words (love, faith, grace, hope, righteousness, soul, sin, life, peace, fellowship, spirit).
+
+## Proofread units (2026-11-06)
+
+51 corrections across the units for G26, G25, G5368 (love), G4102, G4100 (belief), G5485 (grace) and G1343 (righteousness).
+Measured raw error rates on those lines varied with the type: about 2.6% on regular text, 6% on the grace entry, and about **13% on the bold-italic
+BELIEVE entry** (18 errors in about 140 words). One correction was a digit that changes the meaning (John xi. **3**, 36, OCR gave 8).
+All corrections are by one reader; a second reading of a sample is still to do.
