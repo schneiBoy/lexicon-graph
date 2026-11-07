@@ -54,3 +54,14 @@ So a quote that is "verbatim from Thayer's" is verbatim to the digital copy, not
 - Bullinger and Young's fields cannot be checked until copies exist.
 
 Until the sourced fields are regenerated from the real texts, a drafted quote that matches the sample proves only that it matches the sample, not the source.
+
+
+## Source errors found while checking pilot drafts (2026-11-07)
+
+A quote that is verbatim in a digital copy can still be wrong. Two real cases:
+
+1. **Strong's JSON (`strongs-greek-dictionary.js`) is damaged.** It drops the Greek word from 469 of 5,624 derivations (G25 reads "perhaps from (much)" where the source has "perhaps from ἄγαν (much)") and adds a lemma after every cross-reference that the source does not contain.
+   The XML (`strongsgreek.xml`) it was built from has the words; but the XML labels three Hebrew cross-references as Greek (G25 to 5689, G137 to 5869, G4460 to 7343). The repo's xhtml links them as Old Testament.
+   Fix: Strong's fields are now built by `pipeline/ingest/strongs_xml.py` from the XML, with the xhtml settling the language (`data/clean/strongs/greek.json`). openscriptures/strongs commit 0acd2f251c2d35ff8db2dece4e0593979d3ac223.
+2. **Thayer's digital copy expands an abbreviation wrongly.** In the entry for δικαιοσύνη (G1343) the print (scan PDF page 173, printed page 149) reads "where δικ. καὶ ὁσιότης are connected", where δικ. is the entry's own abbreviated headword.
+   The digital copy reads "where δίκαιος καί ὁσιότης are connected". A drafted note repeated the wrong word. The span is now marked `do_not_quote` in the pilot record, and the digital Thayer's stays a second reading only; the print scan is the authority.

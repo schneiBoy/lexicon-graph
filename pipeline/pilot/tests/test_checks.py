@@ -76,15 +76,15 @@ class CheckTests(unittest.TestCase):
     def test_padded_wording_is_flagged(self):
         d = good_draft()
         d["distinctions"][0]["text"] += " It means deliberate, sacrificial devotion."
-        flags = self.check(d)["flags"]
-        self.assertTrue(any("sacrificial" in f for f in flags))
+        fails = self.check(d)["fails"]
+        self.assertTrue(any("sacrificial" in f for f in fails))
 
     def test_padding_beyond_own_quote_is_flagged_even_if_word_is_elsewhere_in_source(self):
         d = good_draft()
         d["etymology_note"] = [{"text": "Derived from the verb, meaning benevolence toward neighbours.",
                                 "quote": "From G25 (ἀγαπάω)"}]
-        flags = self.check(d)["flags"]
-        self.assertTrue(any("benevolence" in f for f in flags), flags)
+        fails = self.check(d)["fails"]
+        self.assertTrue(any("benevolence" in f for f in fails), fails)
 
     def test_strongs_must_be_exact_format(self):
         d = good_draft()
@@ -104,6 +104,49 @@ class CheckTests(unittest.TestCase):
         d = good_draft()
         d["distinctions"][0] = "a bare string"
         self.assertTrue(self.check(d)["fails"])
+
+    def test_same_quote_twice_fails(self):
+        d = good_draft()
+        d["key_theological_notes"] = [{"text": "Strong's defines it as love, affection or benevolence.", "quote": GOOD_QUOTE}]
+        self.assertTrue(any("same quote" in f for f in self.check(d)["fails"]))
+
+    def test_contrast_with_only_own_number_fails(self):
+        d = good_draft()
+        d["semantic_contrasts"] = [{"strongs": ["G26"], "summary": "Love, affection or benevolence, as defined.",
+                                    "quote": "love, i.e. affection or benevolence"}]
+        self.assertTrue(any("own number" in f for f in self.check(d)["fails"]))
+
+    def test_contrast_must_mention_the_other_word_in_its_quote(self):
+        d = good_draft()
+        d["semantic_contrasts"] = [{"strongs": ["G25"], "summary": "Love, affection or benevolence, as defined.",
+                                    "quote": "love, i.e. affection or benevolence"}]
+        self.assertTrue(any("G25 is not mentioned" in f for f in self.check(d)["fails"]))
+        d["semantic_contrasts"][0]["quote"] = "From G25 (ἀγαπάω)"
+        self.assertFalse(any("is not mentioned" in f for f in self.check(d)["fails"]))
+
+    def test_contrast_can_name_other_word_by_its_greek_lemma(self):
+        d = good_draft()
+        d["semantic_contrasts"] = [{"strongs": ["G25"], "summary": "Love, affection or benevolence, as defined.",
+                                    "quote": "From G25 (ἀγαπάω)"}]
+        src = copy.deepcopy(self.source)
+        src["bullinger"] = {"text": "ἀγαπάω is to make much of a thing, to admire for some good reason"}
+        d["semantic_contrasts"][0]["quote"] = "ἀγαπάω is to make much of a thing, to admire"
+        self.assertEqual(check_draft(d, src, {"G25": "ἀγαπάω"})["fails"].count("x"), 0)
+        self.assertFalse(any("is not mentioned" in f for f in check_draft(d, src, {"G25": "ἀγαπάω"})["fails"]))
+
+    def test_quote_with_damaged_print_fails(self):
+        d = good_draft()
+        src = copy.deepcopy(self.source)
+        src["bullinger"] = {"text": "a self-surrende ing fellowship", "do_not_quote": ["surrende ing"]}
+        d["distinctions"][0]["quote"] = "a self-surrende ing fellowship"
+        self.assertTrue(any("do_not_quote" in f for f in check_draft(d, src)["fails"]))
+
+    def test_known_copy_error_in_thayers_cannot_be_quoted(self):
+        d = good_draft()
+        src = copy.deepcopy(self.source)
+        src["thayers"] = {"text": "where δίκαιος καί ὁσιότης are connected", "do_not_quote": ["δίκαιος καί ὁσιότης"]}
+        d["distinctions"][0]["quote"] = "where δίκαιος καί ὁσιότης are connected"
+        self.assertTrue(any("do_not_quote" in f for f in check_draft(d, src)["fails"]))
 
     def test_example_in_prompt_passes_its_own_check(self):
         result = check_draft(pilot.EXAMPLE_DRAFT, pilot.EXAMPLE_SOURCE)

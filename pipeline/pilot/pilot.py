@@ -127,7 +127,7 @@ def ollama_chat(host, model, messages, num_ctx):
     return r["message"]["content"], metrics
 
 
-def draft_lemma(host, model, target, num_ctx, retries):
+def draft_lemma(host, model, target, num_ctx, retries, lemma_index=None):
     messages = build_messages(target["source"])
     totals = dict.fromkeys(TOTAL_KEYS, 0)
     first = None
@@ -137,7 +137,7 @@ def draft_lemma(host, model, target, num_ctx, retries):
             totals[k] += m[k]
         try:
             draft = json.loads(content)
-            result = check_draft(draft, target["source"])
+            result = check_draft(draft, target["source"], lemma_index)
         except json.JSONDecodeError:
             draft, result = None, {"fails": ["output is not valid JSON"], "flags": []}
         if attempt == 0:
@@ -148,7 +148,7 @@ def draft_lemma(host, model, target, num_ctx, retries):
                      {"role": "user", "content": "Fix these problems and return corrected JSON only: "
                       + "; ".join(result["fails"])}]
     return {"draft": draft, "first_pass_ok": not first["fails"], "final": result,
-            "attempts": attempt + 1, **totals}
+            "first_pass_fails": first["fails"], "attempts": attempt + 1, **totals}
 
 
 class Budget:
@@ -238,7 +238,8 @@ def write_report(out, rows, control, projection_n):
     lines += ["", "Fails are retried; flags list statement words that are not in the statement's own quote (padding).", "",
               f"## Projection to {projection_n} lemmas (local drafting)", ""]
     for model, rs in rows.items():
-        per = sum(r["seconds"] for r in rs) / len(rs)
+        import statistics
+        per = statistics.median(r["seconds"] for r in rs)   # median: the first call includes loading the model
         lines.append(f"- {model}: about {per * projection_n / 3600:.1f} hours "
                      f"({sum(r['output_tokens'] for r in rs) / len(rs):.0f} output tokens per lemma, "
                      "retries included)")
@@ -274,7 +275,11 @@ def main():
     ap.add_argument("--confirm-spend", action="store_true")
     args = ap.parse_args()
 
+    lemma_index = None
     if args.lemmas:
+        idx = Path(args.lemmas).with_name("lemma_index.json")
+        if idx.exists():
+            lemma_index = json.loads(idx.read_text(encoding="utf-8"))
         lemmas = {k: {"source": drop_companion(v["source"]), "gold": None}
                   for k, v in json.loads(Path(args.lemmas).read_text(encoding="utf-8")).items()}
     else:
@@ -318,7 +323,7 @@ def main():
         rows[model] = []
         for name in names:
             print(f"[{model}] drafting {name} ...", flush=True)
-            r = draft_lemma(args.host, model, lemmas[name], args.num_ctx, args.retries)
+            r = draft_lemma(args.host, model, lemmas[name], args.num_ctx, args.retries, lemma_index)
             r["lemma"] = name
             if budget and r["draft"] is not None and not r["final"]["fails"]:
                 r["verify"] = verify(budget, args.verify_model, lemmas[name]["source"], r["draft"],

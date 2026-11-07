@@ -9,8 +9,11 @@ Every drafted statement is {"text": ..., "quote": ...}. Two result levels:
   fails  the draft is rejected and retried: wrong shape; a quote that is not
          verbatim inside a single field of the source; a Strong's number, bare
          number, Greek or Hebrew word, or verse reference that is not in the source.
-  flags  for a person or the verifier: content words in a statement that are not
-         in the statement's OWN quote (this is where padded wording shows up).
+         Also rejected: a statement using content words that are not in its OWN quote
+         (padding), a quote used for two statements, a quote that includes a span the
+         source marks do_not_quote (damaged print, or a known error in the digital copy), and a contrast that does not name
+         a second word that its quote actually mentions.
+  flags  kept for softer notes; currently empty.
 """
 import json
 import re
@@ -62,6 +65,10 @@ _DIGITS = re.compile(r"\d+")
 _SCRIPT = re.compile(r"[Ͱ-Ͽἀ-῿֐-׿]+")
 _WORD = re.compile(r"[A-Za-z]{6,}")
 
+# Structural verbs that restate a quote without adding content; they are not treated as padding.
+STRUCTURAL = {"derived", "denotes", "signifies", "meaning", "means", "stated", "states", "describes", "refers",
+              # naming the source is attribution, not content
+              "strong", "thayer", "bullinger", "defines", "defined", "explains", "according"}
 MIN_QUOTE = 12
 MAX_QUOTE = 400
 
@@ -190,24 +197,51 @@ def check_text(blob, source):
     return problems
 
 
-def check_draft(draft, source):
-    """Return {"fails": [...], "flags": [...]} for a draft against its source dict."""
+def _do_not_quote(source):
+    """Spans any source field lists under a do_not_quote key (damaged print, known digital-copy errors)."""
+    return [_qnorm(text) for path, text in _leaves(source) if "do_not_quote" in path]
+
+
+def check_draft(draft, source, lemma_index=None):
+    """Return {"fails": [...], "flags": [...]} for a draft against its source dict.
+
+    lemma_index: optional {"G25": "ἀγαπάω", ...}; lets a contrast name another word by its Greek lemma in the quote.
+    """
     fails = validate_shape(draft)
     if fails:
         return {"fails": fails, "flags": []}
 
     leaves = [_qnorm(t) for _, t in _leaves(source)]
-    for label, _, quote in _statements(draft):
+    banned = _do_not_quote(source)
+    seen = {}
+    for label, text, quote in _statements(draft):
         if _bad_str(quote, MIN_QUOTE, MAX_QUOTE):
             fails.append(f"{label}: quote must be {MIN_QUOTE}-{MAX_QUOTE} characters copied from the source")
         elif not any(_qnorm(quote) in leaf for leaf in leaves):
             fails.append(f"{label}: quote is not verbatim inside one source field: {quote[:60]!r}")
+        elif any(b in _qnorm(quote) for b in banned):
+            fails.append(f"{label}: quote includes a span the source marks do_not_quote (damaged print or known copy error)")
+        key = _qnorm(quote)
+        if key in seen:
+            fails.append(f"{label}: same quote already used for {seen[key]}; each statement needs its own passage")
+        seen.setdefault(key, label)
     fails += check_text(draft_text(draft), source)
 
-    flags = []
+    own = source.get("strongs", {}).get("number") if isinstance(source.get("strongs"), dict) else None
+    for i, c in enumerate(draft["semantic_contrasts"]):
+        others = [n for n in c["strongs"] if n != own]
+        if own and not others:
+            fails.append(f"semantic_contrasts[{i}]: lists only this word's own number; a contrast must name another word")
+        q = _qnorm(c["quote"])
+        for n in others:
+            lemma = (lemma_index or {}).get(n)
+            if n.casefold() not in q and not (lemma and _norm(lemma) in _norm(c["quote"])):
+                fails.append(f"semantic_contrasts[{i}]: {n} is not mentioned in the contrast's own quote")
+
     for label, text, quote in _statements(draft):
-        own = _qnorm(quote)
-        extra = sorted({w.lower() for w in _WORD.findall(text) if w.lower()[:5] not in own})
+        own_quote = _qnorm(quote)
+        extra = sorted({w.lower() for w in _WORD.findall(text)
+                        if w.lower()[:5] not in own_quote and w.lower() not in STRUCTURAL})
         if extra:
-            flags.append(f"{label}: words not in its own quote: {', '.join(extra)}")
-    return {"fails": fails, "flags": flags}
+            fails.append(f"{label}: words not in its own quote (padding): {', '.join(extra)}")
+    return {"fails": fails, "flags": []}

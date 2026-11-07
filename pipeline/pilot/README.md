@@ -58,3 +58,11 @@ python pipeline/pilot/pilot.py --lemmas data/pilot/lemmas.json --models qwen3.5:
 
 `data/pilot/lemmas.json` is built by `build_sources.py` from Strong's, Thayer's (digital, cut at 350 words), proofread Bullinger units, Young's verified counts and the tagged-KJV counts. There is no gold answer and no control row; the checks are the same (quotes must be verbatim, no invented numbers or words).
 Lemmas so far: G26, G25, G5368, G4102, G4100, G5485, G1343.
+
+## Checks added after the first real-source run (2026-11-07)
+
+A draft is now also rejected for: a statement using content words that are not in its own quote (padding; a short list of structural words such as "denotes" is exempt);
+one quote used for two statements; a contrast that lists only the word's own number or names a word its own quote does not mention (by number, or by Greek lemma via `lemma_index.json`);
+a quote that includes a span a source marks `do_not_quote` (damaged print, known digital-copy error). `first_pass_fails` is now saved so it is clear why retries happen.
+The time projection uses the median seconds per lemma, since the first call includes loading the model.
+Rerun after pulling: `python pipeline/pilot/pilot.py --lemmas data/pilot/lemmas.json --models qwen3.5:9b --out pilot_out_real2`.
